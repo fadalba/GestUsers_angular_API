@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body{
+ /* background-image: url("./assets/logo-lareussite.png"); */
+ background-color: rgb(149, 180, 145);
+
+}
+
+td,th{
+  border: 2px solid black;
+
+}
+
+thead{
+  background-color: rgb(25,135,84);
+}
+
+
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+ 
+@import '~mdb-angular-ui-kit/assets/scss/mdb.scss';
+
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: rgb(84, 62, 222);
+}
+/* .h-custom {
+height: calc(50% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+} */
+
+
+img{
+  border-radius: 50px;
+}
+
