@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+/* import { HttpClient } from '@angular/common/http'; */
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -67,9 +68,10 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     RouterModule,
+    HttpClientModule,
     RouterModule.forRoot(
       [
-        {path: '', redirectTo : '/cpt4', pathMatch : 'full'},
+        {path: '', redirectTo : '/cpt3', pathMatch : 'full'},
         {
           path : 'cpt1', component : TableauComponent
         },
