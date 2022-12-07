@@ -1,0 +1,95 @@
+
+    
+    <div class="ins">
+          <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col-lg-12 col-xl-11">
+                <div class="card text-success" style="border-radius: 50px">
+                  <div class="card-body p-md-0">
+                    <div class="row justify-content-center">
+                      <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+    
+                        <p class="text-center h2 fw-bold mb-3 mx-1 mx-md-4 mt-4">Page d'inscription</p>
+                          <form class="p-3" [formGroup]="registerForm"> <!-- controle de saisie -->
+                            <div class="form-group">
+                            <div class="row g-3">
+    
+                            <div class="col">
+                              <label for="prenom">Prenom *:</label>
+                              <input type="text" class="form-control" formControlName="firstName" id="prenom" placeholder="Prénom" aria-label="prenom" required  >
+                              <div class="alert alert-danger " *ngIf="registerForm.controls['firstName'].invalid && registerForm.controls['firstName'].touched"> Champs obligatoire</div>
+                            </div>
+                            <div class="col">
+                              <label for="nom">Nom:</label>
+                              <input formControlName="lastName"  type="text" class="form-control" placeholder="Nom" aria-label="nom">
+                              <div class="alert alert-danger " *ngIf="registerForm.controls['lastName'].invalid && registerForm.controls['lastName'].touched"> Champs obligatoire</div>
+                            </div>
+                          </div>
+                          <br/><br/>
+                          <div class="row g-3">
+                            <div class="col">
+                              <label for="email">Email:</label>
+                              <input formControlName="email"  type="email" class="form-control" placeholder="Email" aria-label="email">
+                              <div class="alert alert-danger " *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched">Champs vide ou format incoprrect</div>
+                            </div>
+                            <div class="col">
+                              <label for="telephone">Téléphone:</label>
+                              <input formControlName="tel"  type="number" class="form-control" id="tel" placeholder="N° téléphone" aria-label="telephone">
+                              <div class="alert alert-danger " *ngIf="registerForm.controls['tel'].invalid && registerForm.controls['tel'].touched"> Champs obligatoire</div>
+                            </div>
+                          </div>
+    
+                          <br/><br/>
+                          <div class="row g-3">
+                            <div class="col">
+                              <label for="mdp">Mot de passe:</label>
+                              <input formControlName="password"  type="password" class="form-control" id="mdp" placeholder="Mot de passe" aria-label="password">
+                              <div class="alert alert-danger " *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched"> Champs obligatoire </div>
+                            </div>
+                            <div class="col">
+                              <label for="mdp">Confirmer Mot de passe:</label>
+                              <input formControlName="passwordC"   type="password" class="form-control" id="mdp" placeholder="Confirme mot de passe" aria-label="password">
+                              <div class="alert alert-danger " *ngIf="registerForm.controls['passwordC'].invalid && registerForm.controls['passwordC'].touched"> Champs obligatoire</div>
+                            </div>
+                          </div>
+    
+    
+                          <br/><br/>
+                          <div class="row g-3">
+                            <div class="col">
+                              <label for="photo">photo:</label>
+                              <input type="file" class="form-control" id="photo"  placeholder="Ajout photo" aria-label="Upload" accept="image/png, image/jpeg">
+                            </div>
+                            <div class="col">
+                              <label for="profil" id="profil" >Profil:</label>
+                              <select class="form-select" formControlName="profil" aria-label="Default select example">
+                                <option selected> </option>
+                                <option value="1">utilisateur</option>
+                                <option value="2">Admin</option>
+                                </select>
+                                <div class="alert alert-danger " *ngIf="registerForm.controls['profil'].invalid && registerForm.controls['profil'].touched"> Champs obligatoire</div>
+                            </div>
+                          </div>
+    <br/>
+                          <div class="form-group">
+                            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                <div class="text-center text-lg-center mt-4 pt-2">
+                                    <button type="button" class="btn btn-success btn-lg " 
+                                      style="padding-left: 2.5rem; padding-right: 2.5rem;" [disabled]="registerForm.invalid">Envoyer</button>
+                                    <p class="small fw-bold mt-2 pt-1 mb-0">contecter <a [routerLink]="['/cpt4']"
+                                        class="link-danger">Inscription</a></p>
+                                  </div>
+                          </div>
+                        </div>
+                        </div>
+                        </form>
+                      </div>
+    
+                      <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+    
+                        <img src="./assets/image1.png"
+                          class="img-fluid" alt="simplon" width="150%" height="10%">
+    
+                      </div>
+                    </div>
+                    
