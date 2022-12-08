@@ -27,7 +27,7 @@
                       <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
                         <p class="text-center h2 fw-bold mb-3 mx-1 mx-md-4 mt-4">Page d'inscription</p>
-                          <form class="p-3" [formGroup]="registerForm"> <!-- controle de saisie -->
+                          <form class="p-3" [formGroup]="registerForm" (ngSubmit)="onSubmit()"> <!-- controle de saisie -->
                             <div class="form-group">
                             <div class="row g-3">
 
@@ -73,6 +73,7 @@
                           </div>
 
 
+
                           <br/><br/>
                           <div class="row g-3">
                             <div class="col">
@@ -83,8 +84,8 @@
                               <label for="profil" id="profil" >Profil:</label>
                               <select class="form-select" formControlName="profil" aria-label="Default select example">
                                 <option selected> </option>
-                                <option value="1">utilisateur</option>
-                                <option value="2">Admin</option>
+                                <option value="user">utilisateur</option>
+                                <option value="admin">Admin</option>
                                 </select>
                                 <div class="alert alert-danger " *ngIf="registerForm.controls['profil'].invalid && registerForm.controls['profil'].touched"> Champs obligatoire</div>
                             </div>
@@ -93,7 +94,11 @@
                           <div class="form-group">
                             <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                 <div class="text-center text-lg-center mt-4 pt-2">
+
+                                    <button type="submit" class="btn btn-success btn-lg btn-primary btn-block " 
+
                                     <button type="button" class="btn btn-success btn-lg "
+
                                       style="padding-left: 2.5rem; padding-right: 2.5rem;" [disabled]="registerForm.invalid">Envoyer</button>
                                     <p class="small fw-bold mt-2 pt-1 mb-0">contecter <a [routerLink]="['/cpt4']"
                                         class="link-danger">Connexion</a></p>
