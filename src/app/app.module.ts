@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { AppComponent } from './app.component';
-
 import { AppRoutingModule } from './app-routing.module';
 import { TableauComponent } from './tableau/tableau.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { ModifierComponent } from './modifier/modifier.component';
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
@@ -27,6 +26,8 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { PaginationComponent } from './pagination/pagination.component';
+import { HeaderAcceuilComponent } from './header-acceuil/header-acceuil.component';
+import { ListArchivesComponent } from './list-archives/list-archives.component';
 
 
 
@@ -36,9 +37,11 @@ import { PaginationComponent } from './pagination/pagination.component';
     AppComponent,
     TableauComponent,
     InscriptionComponent,
+    ModifierComponent,
     HeaderComponent,
     LoginComponent,
     PaginationComponent,
+    HeaderAcceuilComponent,
 
 
   ],
@@ -73,7 +76,10 @@ import { PaginationComponent } from './pagination/pagination.component';
           path : 'cpt1', component : TableauComponent
         },
         {
-          path : 'cpt2', component : HeaderComponent
+          path : 'cpt2', component : ListArchivesComponent
+        },
+        {
+          path : 'cpt3', component : InscriptionComponent
         },
         {
           path : 'cpt4', component : LoginComponent
@@ -83,8 +89,9 @@ import { PaginationComponent } from './pagination/pagination.component';
         },
 
         {
-          path : 'cpt3', component : InscriptionComponent
+          path : 'cpt6', component : ModifierComponent
         }
+
       ]
     )
   ],
