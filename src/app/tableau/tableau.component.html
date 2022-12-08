@@ -21,7 +21,7 @@
       <td>{{ book.tel }}</td>
       <td>{{ book.profil }}</td>
       <td class="text-center">
-        <button class="btn btn-sm btn-primary" routerLink="/edit-book/{{ book._id }}">Edit</button>
+        <a routerLink="/cpt6/{{ book._id }}" class="link-danger btn btn-sm btn-primary">Update</a>
         <button class="btn btn-sm btn-danger" (click)="delete(book._id, i)">Delete</button>
       </td>
     </tr>

@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { AppComponent } from './app.component';
+import { ModifierComponent } from './modifier/modifier.component';
 
 const routes: Routes = [
   
@@ -24,7 +25,8 @@ const routes: Routes = [
         
         {
           path : 'cpt3', component : InscriptionComponent
-        }
+        },
+        { path: 'cpt6/:id', component: ModifierComponent },
 
 ];
 

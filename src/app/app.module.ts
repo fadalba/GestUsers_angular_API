@@ -29,6 +29,7 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { ModifierComponent } from './modifier/modifier.component';
 
 
 
@@ -41,7 +42,8 @@ import { RouterModule } from '@angular/router';
     TableauComponent,
     InscriptionComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    ModifierComponent
   
 
   ],
