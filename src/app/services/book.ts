@@ -3,4 +3,6 @@ export class Book {
     firstName!: String;
     lastName!: String;
     email!: String;
+    tel!:number;
+    profil!:string;
   }

@@ -64,8 +64,8 @@
                               <label for="profil" id="profil" >Profil:</label>
                               <select class="form-select" formControlName="profil" aria-label="Default select example">
                                 <option selected> </option>
-                                <option value="1">utilisateur</option>
-                                <option value="2">Admin</option>
+                                <option value="user">utilisateur</option>
+                                <option value="admin">Admin</option>
                                 </select>
                                 <div class="alert alert-danger " *ngIf="registerForm.controls['profil'].invalid && registerForm.controls['profil'].touched"> Champs obligatoire</div>
                             </div>

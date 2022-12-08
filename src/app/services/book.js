@@ -15,6 +15,9 @@ let Book = new Schema(
     tel: {
         type: String,
       },
+    profil:{
+        type: String,
+      }  
   },
   {
     collection: "books",
