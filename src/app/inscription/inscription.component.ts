@@ -39,13 +39,14 @@ export class InscriptionComponent implements OnInit {
           password: ['', [Validators.required]],
           passwordC: ['', [Validators.required, matchValidator(this.password)]],
           profil: ['', [Validators.required]]
-          
+
       });
   }
 /*   get f() { return this.registerForm.controls; } */
 
   onSubmit() {
     this.submitted = true;
+
 
 
     // stop here if form is invalid
@@ -80,6 +81,7 @@ export class InscriptionComponent implements OnInit {
 );
 }
   
+
 }
 
 
@@ -102,7 +104,7 @@ export function matchValidator(fieldName: string) {
 
           //FormControl Second
           if (!fcSecond) {
-              throw new Error('matchValidator(): Second control is not found in the parent group!');
+              throw new Error('matchValidator(): non conforme');
           }
 
           fcSecond.valueChanges.subscribe(() => {

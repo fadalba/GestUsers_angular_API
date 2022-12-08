@@ -6,8 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
-
-
 import { TableauComponent } from './tableau/tableau.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
@@ -31,26 +29,36 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+<<<<<<< master
 import { ModifierComponent } from './modifier/modifier.component';
 
 
+=======
+import { PaginationComponent } from './pagination/pagination.component';
+>>>>>>> main
 
 
 
 @NgModule({
   declarations: [
-    
+
     AppComponent,
     TableauComponent,
     InscriptionComponent,
     ModifierComponent,
     HeaderComponent,
     LoginComponent,
+<<<<<<< master
     ModifierComponent
   
+=======
+    PaginationComponent,
+
+>>>>>>> main
 
   ],
   imports: [
+
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
@@ -92,6 +100,10 @@ import { ModifierComponent } from './modifier/modifier.component';
         {
           path : 'cpt5', component : AppComponent
         },
+<<<<<<< master
+=======
+
+>>>>>>> main
         {
           path : 'cpt6', component : ModifierComponent
         }
@@ -101,6 +113,11 @@ import { ModifierComponent } from './modifier/modifier.component';
   ],
   providers: [],
   bootstrap: [AppComponent]
-  
+
 })
 export class AppModule { }
+
+
+
+
+
