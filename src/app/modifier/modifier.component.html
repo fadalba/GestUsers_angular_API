@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
   <div class="container-fluid">
@@ -15,6 +16,32 @@
 </nav>
 <span ><h2 align="center"></h2></span>
 
+=======
+<div class="row justify-content-center mt-5">
+    <div class="col-md-4">
+      <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+        <div class="form-group">
+          <label>Prenom</label>
+          <input class="form-control" type="text" formControlName="firstName" required/>
+        </div>
+        <div class="form-group">
+          <label>Nom</label>
+          <input class="form-control" type="text" formControlName="lastName" required/>
+        </div>
+        <div class="form-group">
+        <label>Email</label>
+          <input class="form-control" type="email" formControlName="email" required/>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">Modifier</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+    
+>>>>>>> 500d2bc44efd5c8ef20ae59859badf100dc6d146
     <div class="ins">
           <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -87,3 +114,7 @@
 
                       </div>
                     </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 500d2bc44efd5c8ef20ae59859badf100dc6d146

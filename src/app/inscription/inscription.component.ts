@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup,FormBuilder,Validators,FormControl} from '@angular/forms';
+import { Validators } from '@angular/forms';
+import { CrudService } from '../services/inscription.service';
+import { NgZone } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-inscription',
   templateUrl: './inscription.component.html',
@@ -10,8 +14,21 @@ export class InscriptionComponent implements OnInit {
   registerForm !: FormGroup;
   password = 'password';
   submitted = false;
+ /*  bookForm: FormGroup; */
 
-  constructor(private formBuilder : FormBuilder) { }
+  constructor(
+    public formBuilder: FormBuilder,
+    private router: Router,
+    private ngZone: NgZone,
+    private crudService: CrudService
+  ) {
+    this.registerForm = this.formBuilder.group({
+      firstName: [''],
+      lastName: [''],
+      email: [''],
+      tel: [''],
+    });
+  } 
 
   ngOnInit() {
       this.registerForm = this.formBuilder.group({
@@ -25,10 +42,50 @@ export class InscriptionComponent implements OnInit {
 
       });
   }
+/*   get f() { return this.registerForm.controls; } */
+
+  onSubmit() {
+    this.submitted = true;
 
 
+<<<<<<< HEAD
 
+=======
+    // stop here if form is invalid
+    // if (this.registerForm.invalid) {
+    //     return;
+    // }
+
+    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
+
+    const user={
+      firstName:this.registerForm.value.firstName,
+      lastName:this.registerForm.value.lastName,
+      email:this.registerForm.value.email,
+      password:this.registerForm.value.password
+
+    }
+    this.crudService.AddBook(this.registerForm.value).subscribe(
+      () => {
+        console.log('Data added successfully!');
+        this.ngZone.run(() => this.router.navigateByUrl('/books-list'));
+      },
+      (err) => {
+        console.log(err);
+      },
+
+/*       this.inscriService.addUser(user).subscribe(
+      data =>{
+        console.log(data)
+      }
+    ) */
+ 
+);
 }
+  
+>>>>>>> 500d2bc44efd5c8ef20ae59859badf100dc6d146
+}
+
 
 
 export function matchValidator(fieldName: string) {

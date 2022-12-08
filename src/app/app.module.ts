@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
+
+/* import { HttpClient } from '@angular/common/http'; */
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { TableauComponent } from './tableau/tableau.component';
 import { HeaderComponent } from './header/header.component';
@@ -29,6 +32,10 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { HeaderAcceuilComponent } from './header-acceuil/header-acceuil.component';
 import { ListArchivesComponent } from './list-archives/list-archives.component';
 
+import { AppComponent } from './app.component';
+
+
+
 
 
 @NgModule({
@@ -42,8 +49,7 @@ import { ListArchivesComponent } from './list-archives/list-archives.component';
     LoginComponent,
     PaginationComponent,
     HeaderAcceuilComponent,
-
-
+    ModifierComponent,
   ],
   imports: [
 
@@ -69,9 +75,10 @@ import { ListArchivesComponent } from './list-archives/list-archives.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     RouterModule,
+    HttpClientModule,
     RouterModule.forRoot(
       [
-        {path: '', redirectTo : '/cpt4', pathMatch : 'full'},
+        {path: '', redirectTo : '/cpt3', pathMatch : 'full'},
         {
           path : 'cpt1', component : TableauComponent
         },
