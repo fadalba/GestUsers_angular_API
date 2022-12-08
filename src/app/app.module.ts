@@ -5,8 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
-
-
 import { TableauComponent } from './tableau/tableau.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
@@ -30,24 +28,25 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-
-
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 
 @NgModule({
   declarations: [
-    
+
     AppComponent,
     TableauComponent,
     InscriptionComponent,
     ModifierComponent,
     HeaderComponent,
-    LoginComponent
-  
+    LoginComponent,
+    PaginationComponent,
+
 
   ],
   imports: [
+
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
@@ -88,6 +87,7 @@ import { RouterModule } from '@angular/router';
         {
           path : 'cpt5', component : AppComponent
         },
+
         {
           path : 'cpt6', component : ModifierComponent
         }
@@ -97,6 +97,11 @@ import { RouterModule } from '@angular/router';
   ],
   providers: [],
   bootstrap: [AppComponent]
-  
+
 })
 export class AppModule { }
+
+
+
+
+
