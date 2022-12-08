@@ -2,12 +2,22 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CrudService } from './../services/inscription.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
+
+
+import { Component, OnInit } from '@angular/core';
+import {FormGroup,FormBuilder,Validators,FormControl} from '@angular/forms';
+
 @Component({
   selector: 'app-modifier',
   templateUrl: './modifier.component.html',
   styleUrls: ['./modifier.component.css']
 })
 export class ModifierComponent implements OnInit {
+
+  registerForm !: FormGroup;
+  password = 'password';
+  submitted = false;
+
 
   getId: any;
   updateForm: FormGroup;
@@ -48,6 +58,36 @@ export class ModifierComponent implements OnInit {
         console.log(err);
       }
     );
+
+  constructor(private formBuilder : FormBuilder) { }
+
+  ngOnInit() {
+      this.registerForm = this.formBuilder.group({
+          firstName: ['', Validators.required],
+          lastName: ['', Validators.required],
+          tel: ['', Validators.required],
+          email: ['', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+          password: ['', [Validators.required]],
+          passwordC: ['', [Validators.required, matchValidator(this.password)]],
+          profil: ['', [Validators.required]]
+          
+
+
+
+  constructor(private formBuilder : FormBuilder) { }
+
+  ngOnInit() {
+      this.registerForm = this.formBuilder.group({
+          firstName: ['', Validators.required],
+          lastName: ['', Validators.required],
+          tel: ['', Validators.required],
+          email: ['', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+          password: ['', [Validators.required]],
+          passwordC: ['', [Validators.required, matchValidator(this.password)]],
+          profil: ['', [Validators.required]]
+          
+      });
+
   }
 
 }

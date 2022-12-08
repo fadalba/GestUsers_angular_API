@@ -28,12 +28,17 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+
 import { PaginationComponent } from './pagination/pagination.component';
 import { HeaderAcceuilComponent } from './header-acceuil/header-acceuil.component';
 import { ListArchivesComponent } from './list-archives/list-archives.component';
 
 import { AppComponent } from './app.component';
 
+import { ModifierComponent } from './modifier/modifier.component';
+
+
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 
@@ -47,9 +52,17 @@ import { AppComponent } from './app.component';
     ModifierComponent,
     HeaderComponent,
     LoginComponent,
+
     PaginationComponent,
     HeaderAcceuilComponent,
     ModifierComponent,
+
+    ModifierComponent
+  
+
+    PaginationComponent,
+
+
   ],
   imports: [
 
