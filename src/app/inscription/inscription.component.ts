@@ -28,7 +28,7 @@ export class InscriptionComponent implements OnInit {
       email: [''],
       tel: [''],
     });
-  } 
+  }
 
   ngOnInit() {
       this.registerForm = this.formBuilder.group({
@@ -48,9 +48,7 @@ export class InscriptionComponent implements OnInit {
     this.submitted = true;
 
 
-<<<<<<< HEAD
 
-=======
     // stop here if form is invalid
     // if (this.registerForm.invalid) {
     //     return;
@@ -79,11 +77,11 @@ export class InscriptionComponent implements OnInit {
         console.log(data)
       }
     ) */
- 
+
 );
 }
-  
->>>>>>> 500d2bc44efd5c8ef20ae59859badf100dc6d146
+
+
 }
 
 
