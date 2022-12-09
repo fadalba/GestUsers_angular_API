@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 /* import { HttpClient } from '@angular/common/http'; */
 import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { TableauComponent } from './tableau/tableau.component';
@@ -28,18 +29,11 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-
 import { PaginationComponent } from './pagination/pagination.component';
 import { HeaderAcceuilComponent } from './header-acceuil/header-acceuil.component';
 import { ListArchivesComponent } from './list-archives/list-archives.component';
-
 import { AppComponent } from './app.component';
-
-import { ModifierComponent } from './modifier/modifier.component';
-
-
-import { PaginationComponent } from './pagination/pagination.component';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter'; /* recherche */
 
 
 
@@ -52,16 +46,10 @@ import { PaginationComponent } from './pagination/pagination.component';
     ModifierComponent,
     HeaderComponent,
     LoginComponent,
-
     PaginationComponent,
     HeaderAcceuilComponent,
     ModifierComponent,
-
     ModifierComponent
-  
-
-    PaginationComponent,
-
 
   ],
   imports: [
@@ -89,6 +77,9 @@ import { PaginationComponent } from './pagination/pagination.component';
     BrowserAnimationsModule,
     RouterModule,
     HttpClientModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
+
     RouterModule.forRoot(
       [
         {path: '', redirectTo : '/cpt3', pathMatch : 'full'},

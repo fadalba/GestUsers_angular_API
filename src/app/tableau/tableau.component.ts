@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../services/inscription.service';
+import list from '../Books.json' /* pagination */
+import { Ng2SearchPipeModule } from 'ng2-search-filter'; /* recherche */
 
 @Component({
   selector: 'app-tableau',
@@ -7,6 +9,10 @@ import { CrudService } from '../services/inscription.service';
   styleUrls: ['./tableau.component.css']
 })
 export class TableauComponent implements OnInit {
+  list:any =list;  /* liste fiective à remplacer Books par []  pour les données rééels*/
+
+  pages: number = 1;
+  searchText:any; // search installer npm i ng2-search-filter
 
   Books: any = [];
 
