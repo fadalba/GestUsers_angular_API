@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 /* import { HttpClient } from '@angular/common/http'; */
 import { HttpClientModule } from '@angular/common/http';
-import { AppComponent } from './app.component';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { TableauComponent } from './tableau/tableau.component';
@@ -11,7 +12,6 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ModifierComponent } from './modifier/modifier.component';
-
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
@@ -29,13 +29,11 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-<<<<<<< master
-import { ModifierComponent } from './modifier/modifier.component';
-
-
-=======
 import { PaginationComponent } from './pagination/pagination.component';
->>>>>>> main
+import { HeaderAcceuilComponent } from './header-acceuil/header-acceuil.component';
+import { ListArchivesComponent } from './list-archives/list-archives.component';
+import { AppComponent } from './app.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter'; /* recherche */
 
 
 
@@ -48,13 +46,10 @@ import { PaginationComponent } from './pagination/pagination.component';
     ModifierComponent,
     HeaderComponent,
     LoginComponent,
-<<<<<<< master
-    ModifierComponent
-  
-=======
     PaginationComponent,
-
->>>>>>> main
+    HeaderAcceuilComponent,
+    ModifierComponent,
+    ModifierComponent
 
   ],
   imports: [
@@ -82,6 +77,9 @@ import { PaginationComponent } from './pagination/pagination.component';
     BrowserAnimationsModule,
     RouterModule,
     HttpClientModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
+
     RouterModule.forRoot(
       [
         {path: '', redirectTo : '/cpt3', pathMatch : 'full'},
@@ -89,7 +87,7 @@ import { PaginationComponent } from './pagination/pagination.component';
           path : 'cpt1', component : TableauComponent
         },
         {
-          path : 'cpt2', component : HeaderComponent
+          path : 'cpt2', component : ListArchivesComponent
         },
         {
           path : 'cpt3', component : InscriptionComponent
@@ -100,14 +98,11 @@ import { PaginationComponent } from './pagination/pagination.component';
         {
           path : 'cpt5', component : AppComponent
         },
-<<<<<<< master
-=======
 
->>>>>>> main
         {
           path : 'cpt6', component : ModifierComponent
         }
-        
+
       ]
     )
   ],
