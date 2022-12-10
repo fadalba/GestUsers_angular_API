@@ -16,14 +16,14 @@
                             <div class="row g-3">
 
                             <div class="col">
-                              <label for="prenom">Prenom *:</label>
+                              <label for="prenom">Prenom <span style="color: red;">*</span>:</label>
                               <input type="text" class="form-control" formControlName="firstName" id="prenom" placeholder="Prénom" aria-label="prenom" required  >
                               <div class="alert alert-danger " *ngIf="registerForm.controls['firstName'].invalid && registerForm.controls['firstName'].touched"> Champs obligatoire</div>
 
                             </div>
 
                             <div class="col">
-                              <label for="nom">Nom:</label>
+                              <label for="nom">Nom <span style="color: red;">*</span>:</label>
                               <input formControlName="lastName"  type="text" class="form-control" placeholder="Nom" aria-label="nom">
                               <div class="alert alert-danger " *ngIf="registerForm.controls['lastName'].invalid && registerForm.controls['lastName'].touched"> Champs obligatoire</div>
                             </div>
@@ -31,12 +31,12 @@
                           <br/><br/>
                           <div class="row g-3">
                             <div class="col">
-                              <label for="email">Email:</label>
+                              <label for="email">Email <span style="color: red;">*</span>:</label>
                               <input formControlName="email"  type="email" class="form-control" placeholder="Email" aria-label="email">
                               <div class="alert alert-danger " *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched">Champs vide ou format incoprrect</div>
                             </div>
                             <div class="col">
-                              <label for="telephone">Téléphone:</label>
+                              <label for="telephone">Téléphone <span style="color: red;">*</span>:</label>
                               <input formControlName="tel"  type="number" class="form-control" id="tel" placeholder="N° téléphone" aria-label="telephone">
                               <div class="alert alert-danger " *ngIf="registerForm.controls['tel'].invalid && registerForm.controls['tel'].touched"> Champs obligatoire</div>
                             </div>
@@ -45,12 +45,12 @@
                           <br/><br/>
                           <div class="row g-3">
                             <div class="col">
-                              <label for="mdp">Mot de passe:</label>
+                              <label for="mdp">Mot de passe <span style="color: red;">*</span>:</label>
                               <input formControlName="password"  type="password" class="form-control" id="mdp" placeholder="Mot de passe" aria-label="password">
                               <div class="alert alert-danger " *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched"> Champs obligatoire </div>
                             </div>
                             <div class="col">
-                              <label for="mdp">Confirmer Mot de passe:</label>
+                              <label for="mdp">Confirmer Mot de passe <span style="color: red;">*</span>:</label>
                               <input formControlName="passwordC"   type="password" class="form-control" id="mdp" placeholder="Confirme mot de passe" aria-label="password">
                               <div class="alert alert-danger " *ngIf="registerForm.controls['passwordC'].invalid && registerForm.controls['passwordC'].touched"> Champs obligatoire</div>
                             </div>
@@ -64,7 +64,7 @@
                               <input type="file" class="form-control" id="photo"  placeholder="Ajout photo" aria-label="Upload" accept="image/png, image/jpeg">
                             </div>
                             <div class="col">
-                              <label for="profil" id="profil" >Profil:</label>
+                              <label for="profil" id="profil" >Profil <span style="color: red;">*</span>:</label>
                               <select class="form-select" formControlName="profil" aria-label="Default select example">
                                 <option selected> </option>
                                 <option value="user">utilisateur</option>

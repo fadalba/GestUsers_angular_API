@@ -24,7 +24,7 @@
 
           <!-- Email input -->
           <div class="form-outline mb-4">
-            <label class="form-label"  for="form3Example3">Email</label>
+            <label class="form-label"  for="form3Example3">Email <span style="color: red;">*</span>:</label>
             <input type="email" formControlName="email" class="form-control form-control-lg"
               placeholder="Adresse mail" />
               <div class="alert alert-danger" *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched" > Champs vide ou format mail incorrect</div>
@@ -32,7 +32,7 @@
 
           <!-- Password input -->
           <div class="form-outline mb-3">
-            <label class="form-label" for="form3Example4">Mot de passe</label>
+            <label class="form-label" for="form3Example4">Mot de passe <span style="color: red;">*</span>:</label>
             <input type="password" id="form3Example4" class="form-control form-control-lg"
               placeholder="Mot de passe" />
 
@@ -41,7 +41,7 @@
           <div class="text-center text-lg-center mt-4 pt-2">
             <button type="button" class="btn btn-success btn-lg"
               style="padding-left: 2.5rem; padding-right: 2.5rem;" [disabled]="registerForm.invalid">Se connecter</button>
-            <p class="small fw-bold mt-2 pt-1 mb-0">Vous n'avez pas de compte? <a [routerLink]="['/cpt3']" class="link-danger">Inscription</a></p>
+            <p class="small fw-bold mt-2 pt-1 mb-0">S'inscrire? <a [routerLink]="['/cpt3']" class="link-danger">Ici</a></p>
           </div>
 
         </form>
