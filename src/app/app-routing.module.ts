@@ -7,6 +7,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { AppComponent } from './app.component';
 import { ModifierComponent } from './modifier/modifier.component';
 
+
 const routes: Routes = [
   
   {path: '', redirectTo : '/cpt3', pathMatch : 'full'},

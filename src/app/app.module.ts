@@ -34,6 +34,8 @@ import { HeaderAcceuilComponent } from './header-acceuil/header-acceuil.componen
 import { ListArchivesComponent } from './list-archives/list-archives.component';
 import { AppComponent } from './app.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter'; /* recherche */
+import { TabUsersComponent } from './tab-users/tab-users.component';
+
 
 
 
@@ -49,7 +51,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter'; /* recherche */
     PaginationComponent,
     HeaderAcceuilComponent,
     ModifierComponent,
-    ModifierComponent
+    ModifierComponent,
+    TabUsersComponent,
+    ListArchivesComponent,
 
   ],
   imports: [
@@ -87,7 +91,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter'; /* recherche */
           path : 'cpt1', component : TableauComponent
         },
         {
-          path : 'cpt2', component : ListArchivesComponent
+          path : 'archives', component : ListArchivesComponent
         },
         {
           path : 'cpt3', component : InscriptionComponent
@@ -101,7 +105,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter'; /* recherche */
 
         {
           path : 'cpt6', component : ModifierComponent
-        }
+        },
+        {
+          path : 'cpt7', component : TabUsersComponent
+        },
 
       ]
     )
