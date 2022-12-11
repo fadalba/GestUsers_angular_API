@@ -14,6 +14,7 @@ import { AuthGuard } from "./shared/auth.guard";
 
 
 
+
 const routes: Routes = [
   
         {path: '', redirectTo : '/cpt3', pathMatch : 'full'},

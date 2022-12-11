@@ -9,7 +9,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter'; /* recherche */
   styleUrls: ['./tableau.component.css']
 })
 export class TableauComponent implements OnInit {
-  list:any =list;  /* liste fiective à remplacer Books par []  pour les données rééels*/
+  book:any =list;  /* liste fiective à remplacer Books par []  pour les données rééels*/
 
   pages: number = 1;
   searchText:any; // search installer npm i ng2-search-filter
