@@ -40,8 +40,6 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter'; /* recherche */
 import { TabUsersComponent } from './tab-users/tab-users.component';
 
 
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
- /* recherche */
 
 
 

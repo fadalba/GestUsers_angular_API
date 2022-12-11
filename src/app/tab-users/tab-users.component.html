@@ -25,15 +25,15 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let book of Books | filter:searchText | paginate: { itemsPerPage: 5, currentPage: pages }">
-      <th scope="row">{{ book._id }}</th>
-      <th scope="row">{{ book.firstName }}</th>
-      <td>{{ book.lastName }}</td>
-      <td>{{ book.email }}</td>
-      <td>{{ book.tel }}</td>
-      <td>{{ book.matricule }}</td>
-      <td>{{ book.profil }}</td>
-      <td>{{ book.profil }}</td>
+    <tr *ngFor="let user of Users | filter:searchText | paginate: { itemsPerPage: 5, currentPage: pages }">
+      <th scope="row">{{ user._id }}</th>
+      <th scope="row">{{ user.firstName }}</th>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.tel }}</td>
+      <td>{{ user.matricule }}</td>
+      <td>{{ user.profil }}</td>
+      <td>{{ user.profil }}</td>
 
 
     </tr>
