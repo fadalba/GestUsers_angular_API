@@ -4,11 +4,16 @@ import { CrudService } from '../services/inscription.service';
 import { NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { AuthService } from './../shared/auth.service';
 @Component({
   selector: 'app-inscription',
   templateUrl: './inscription.component.html',
   styleUrls: ['./inscription.component.css']
 })
+
+
+
+
 
 export class InscriptionComponent implements OnInit {
   registerForm !: FormGroup;
@@ -17,12 +22,16 @@ export class InscriptionComponent implements OnInit {
  /*  bookForm: FormGroup; */
 
   constructor(
+    public fb: FormBuilder,
+    public authService: AuthService,
     public formBuilder: FormBuilder,
     private router: Router,
     private ngZone: NgZone,
     private crudService: CrudService
   ) {
     this.registerForm = this.formBuilder.group({
+ 
+
       firstName: [''],
       lastName: [''],
       email: [''],
@@ -30,7 +39,7 @@ export class InscriptionComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
+  ngOnInit(){
       this.registerForm = this.formBuilder.group({
           firstName: ['', Validators.required],
           lastName: ['', Validators.required],
@@ -42,10 +51,19 @@ export class InscriptionComponent implements OnInit {
 
       });
   }
+
+
+
 /*   get f() { return this.registerForm.controls; } */
 
   onSubmit() {
     this.submitted = true;
+    this.authService.signUp(this.registerForm.value).subscribe((res) => {
+      if (res.result) {
+        this.registerForm.reset();
+        this.router.navigate(['log-in']);
+      }
+    });
 
 
 
