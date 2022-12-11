@@ -81,10 +81,10 @@ export class InscriptionComponent implements OnInit {
       password:this.registerForm.value.password
 
     }
-    this.crudService.AddBook(this.registerForm.value).subscribe(
+    this.crudService.AddUser(this.registerForm.value).subscribe(
       () => {
         console.log('Data added successfully!');
-        this.ngZone.run(() => this.router.navigateByUrl('/books-list'));
+        this.ngZone.run(() => this.router.navigateByUrl('/users-list'));
       },
       (err) => {
         console.log(err);

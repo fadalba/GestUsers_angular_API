@@ -27,17 +27,17 @@
       <th scope="col">Profil</th>
       <th scope="col">Action</th>
     </tr>
-    <tr *ngFor="let book of list | filter:searchText | paginate: { itemsPerPage: 5, currentPage: pages }">
-      <th scope="row">{{ book.prenom }}</th>
-      <td>{{ book.nom }}</td>
-      <td>{{ book.email }}</td>
-      <td>{{ book.tel }}</td>
-      <td>{{ book.matricule }}</td>
-      <td>{{ book.profil }}</td>
-      <td>{{ book.action }}</td>
+    <tr *ngFor="let user of list | filter:searchText | paginate: { itemsPerPage: 5, currentPage: pages }">
+      <th scope="row">{{ user.prenom }}</th>
+      <td>{{ user.nom }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.tel }}</td>
+      <td>{{ user.matricule }}</td>
+      <td>{{ user.profil }}</td>
+      <td>{{ user.action }}</td>
       <td class="text-center">
-        <a routerLink="/cpt6/{{ book._id }}" class="link-danger btn btn-sm btn-primary">Update</a>
-        <!-- <button class="btn btn-sm btn-danger" (click)="delete(book._id, i)">Delete</button> -->
+        <a routerLink="/cpt6/{{ user._id }}" class="link-danger btn btn-sm btn-primary">Update</a>
+        <!-- <button class="btn btn-sm btn-danger" (click)="delete(user._id, i)">Delete</button> -->
       </td>
     </tr>
   </tbody>

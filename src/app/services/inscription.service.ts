@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Book } from './book';
+import { User } from './user';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse} from '@angular/common/http';
@@ -17,21 +17,21 @@ export class CrudService {
   constructor(private httpClient: HttpClient) {}
 
   // Add
-  AddBook(data: Book): Observable<any> {
-    let API_URL = `${this.REST_API}/add-book`;
+  AddUser(data: User): Observable<any> {
+    let API_URL = `${this.REST_API}/add-user`;
     return this.httpClient
       .post(API_URL, data)
       .pipe(catchError(this.handleError));
   }
 
   // Get all objects
-  GetBooks() {
+  GetUsers() {
     return this.httpClient.get(`${this.REST_API}`);
   }
 
   // Get single object
-  GetBook(id: any): Observable<any> {
-    let API_URL = `${this.REST_API}/read-book/${id}`;
+  GetUser(id: any): Observable<any> {
+    let API_URL = `${this.REST_API}/read-user/${id}`;
     return this.httpClient.get(API_URL, { headers: this.httpHeaders }).pipe(
       map((res: any) => {
         return res || {};
@@ -41,16 +41,16 @@ export class CrudService {
   }
 
   // Update
-  updateBook(id: any, data: any): Observable<any> {
-    let API_URL = `${this.REST_API}/update-book/${id}`;
+  updateUser(id: any, data: any): Observable<any> {
+    let API_URL = `${this.REST_API}/update-user/${id}`;
     return this.httpClient
       .put(API_URL, data, { headers: this.httpHeaders })
       .pipe(catchError(this.handleError));
   }
 
   // Delete
-  deleteBook(id: any): Observable<any> {
-    let API_URL = `${this.REST_API}/delete-book/${id}`;
+  deleteUser(id: any): Observable<any> {
+    let API_URL = `${this.REST_API}/delete-user/${id}`;
     return this.httpClient
       .delete(API_URL, { headers: this.httpHeaders })
       .pipe(catchError(this.handleError));
