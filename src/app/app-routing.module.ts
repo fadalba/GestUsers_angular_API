@@ -6,11 +6,22 @@ import { LoginComponent } from './login/login.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { AppComponent } from './app.component';
 import { ModifierComponent } from './modifier/modifier.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AuthGuard } from "./shared/auth.guard";
+
+
+
+
+
 
 
 const routes: Routes = [
   
-  {path: '', redirectTo : '/cpt3', pathMatch : 'full'},
+        {path: '', redirectTo : '/cpt3', pathMatch : 'full'},
+        { path: '', redirectTo: '/login', pathMatch: 'full' },
+        { path: 'login', component: LoginComponent },
+        { path: 'inscription', component: InscriptionComponent },
+        { path: 'user-profile/:id', component: UserProfileComponent, canActivate: [AuthGuard] },
         {
           path : 'cpt1', component : TableauComponent
         },
@@ -33,7 +44,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
