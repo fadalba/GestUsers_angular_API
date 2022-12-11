@@ -5,4 +5,5 @@ export class User {
     email!: String;
     tel!:number;
     profil!:string;
+    password!: string;
   }

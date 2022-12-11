@@ -17,6 +17,9 @@ let User = new Schema(
     tel: {
       type: Number,
     },
+    password: {
+      type: String,
+    },
     profil: {
       type: String,
     },

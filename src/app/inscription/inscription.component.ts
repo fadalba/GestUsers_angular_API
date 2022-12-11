@@ -13,13 +13,11 @@ import { AuthService } from './../shared/auth.service';
 
 
 
-
-
 export class InscriptionComponent implements OnInit {
   registerForm !: FormGroup;
   password = 'password';
   submitted = false;
- /*  bookForm: FormGroup; */
+ 
 
   constructor(
     public fb: FormBuilder,
@@ -36,6 +34,11 @@ export class InscriptionComponent implements OnInit {
       lastName: [''],
       email: [''],
       tel: [''],
+      password: [''],
+      photo: [''],
+      profile: [''],
+  
+
     });
   }
 
@@ -61,18 +64,11 @@ export class InscriptionComponent implements OnInit {
     this.authService.signUp(this.registerForm.value).subscribe((res) => {
       if (res.result) {
         this.registerForm.reset();
-        this.router.navigate(['log-in']);
+        this.router.navigate(['longin']);
+        
       }
+
     });
-
-
-
-    // stop here if form is invalid
-    // if (this.registerForm.invalid) {
-    //     return;
-    // }
-
-    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
 
     const user={
       firstName:this.registerForm.value.firstName,

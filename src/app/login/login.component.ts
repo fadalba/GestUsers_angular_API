@@ -4,6 +4,8 @@ import { AuthService } from './../shared/auth.service';
 import { Router } from '@angular/router';
 
 
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,9 +19,12 @@ registerForm !: FormGroup;
     public authService: AuthService,
     public router: Router
     ) { 
+      this.registerForm = this.fb.group({
+        email: [''],
+        password: ['']
 
-    }
-
+    });
+  }
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
       email : ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],

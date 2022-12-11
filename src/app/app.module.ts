@@ -5,9 +5,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
 /* import { HttpClient } from '@angular/common/http'; */
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './shared/authconfig.interceptor';
-
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { TableauComponent } from './tableau/tableau.component';
 import { HeaderComponent } from './header/header.component';
@@ -98,6 +95,7 @@ import { TabUsersComponent } from './tab-users/tab-users.component';
     RouterModule.forRoot(
       [
         {path: '', redirectTo : '/cpt3', pathMatch : 'full'},
+        {path: '', redirectTo : '/cpt4', pathMatch : 'full'},
         {
           path : 'cpt1', component : TableauComponent
         },

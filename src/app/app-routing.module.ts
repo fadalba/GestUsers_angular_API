@@ -8,7 +8,11 @@ import { AppComponent } from './app.component';
 import { ModifierComponent } from './modifier/modifier.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AuthGuard } from "./shared/auth.guard";
+import { TabUsersComponent } from './tab-users/tab-users.component';
 
+/* import { SigninComponent } from './components/signin/signin.component';
+import { SignupComponent } from './components/signup/signup.component'; 
+import { UserProfileComponent } from './components/user-profile/user-profile.component';*/
 
 
 
@@ -17,11 +21,12 @@ import { AuthGuard } from "./shared/auth.guard";
 
 const routes: Routes = [
   
-        {path: '', redirectTo : '/cpt3', pathMatch : 'full'},
-        { path: '', redirectTo: '/login', pathMatch: 'full' },
+        {path: '', redirectTo : '/login', pathMatch : 'full'},
+        { path: '', redirectTo: '/inscription', pathMatch: 'full' },
         { path: 'login', component: LoginComponent },
         { path: 'inscription', component: InscriptionComponent },
-        { path: 'user-profile/:id', component: UserProfileComponent, canActivate: [AuthGuard] },
+        { path: 'tableau/:id', component: TableauComponent, canActivate: [AuthGuard] },
+        { path: 'tabusers/:id', component: TabUsersComponent, canActivate: [AuthGuard] },
         {
           path : 'cpt1', component : TableauComponent
         },
@@ -37,6 +42,9 @@ const routes: Routes = [
         
         {
           path : 'cpt3', component : InscriptionComponent
+        },
+        {
+          path : 'cpt7', component : TabUsersComponent
         },
         { path: 'cpt6/:id', component: ModifierComponent },
 
