@@ -9,7 +9,8 @@ import { HttpClient, HttpHeaders, HttpErrorResponse} from '@angular/common/http'
 })
 export class CrudService {
   // Node/Express API
-  REST_API: string = 'http://localhost:8000/api';
+  REST_API: string = 'http://localhost:4000/api';
+  REST_API1: string = 'http://localhost:8000/api';
 
   // Http Header
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
@@ -18,7 +19,7 @@ export class CrudService {
 
   // Add
   AddBook(data: Book): Observable<any> {
-    let API_URL = `${this.REST_API}/add-book`;
+    let API_URL = `${this.REST_API}/register-user`;
     return this.httpClient
       .post(API_URL, data)
       .pipe(catchError(this.handleError));
@@ -26,12 +27,12 @@ export class CrudService {
 
   // Get all objects
   GetBooks() {
-    return this.httpClient.get(`${this.REST_API}`);
+    return this.httpClient.get(`${this.REST_API1}`);
   }
 
   // Get single object
   GetBook(id: any): Observable<any> {
-    let API_URL = `${this.REST_API}/read-book/${id}`;
+    let API_URL = `${this.REST_API1}/read-book/${id}`;
     return this.httpClient.get(API_URL, { headers: this.httpHeaders }).pipe(
       map((res: any) => {
         return res || {};
@@ -42,7 +43,7 @@ export class CrudService {
 
   // Update
   updateBook(id: any, data: any): Observable<any> {
-    let API_URL = `${this.REST_API}/update-book/${id}`;
+    let API_URL = `${this.REST_API1}/update-book/${id}`;
     return this.httpClient
       .put(API_URL, data, { headers: this.httpHeaders })
       .pipe(catchError(this.handleError));
@@ -50,7 +51,7 @@ export class CrudService {
 
   // Delete
   deleteBook(id: any): Observable<any> {
-    let API_URL = `${this.REST_API}/delete-book/${id}`;
+    let API_URL = `${this.REST_API1}/delete-book/${id}`;
     return this.httpClient
       .delete(API_URL, { headers: this.httpHeaders })
       .pipe(catchError(this.handleError));

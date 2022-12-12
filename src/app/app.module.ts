@@ -35,6 +35,7 @@ import { ModifierComponent } from './modifier/modifier.component';
 
 
 
+
 @NgModule({
   declarations: [
     
@@ -43,8 +44,9 @@ import { ModifierComponent } from './modifier/modifier.component';
     InscriptionComponent,
     HeaderComponent,
     LoginComponent,
-    ModifierComponent
-  
+    ModifierComponent,
+
+ 
 
   ],
   imports: [

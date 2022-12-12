@@ -5,4 +5,5 @@ export class Book {
     email!: String;
     tel!:number;
     profil!:string;
+    passwordC!:string;
   }
