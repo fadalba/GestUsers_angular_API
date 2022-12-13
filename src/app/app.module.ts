@@ -33,6 +33,7 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 
@@ -52,6 +53,7 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     LoginComponent,
     ModifierComponent,
+    UserProfileComponent,
 
 
 

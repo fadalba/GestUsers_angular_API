@@ -7,6 +7,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { AppComponent } from './app.component';
 import { ModifierComponent } from './modifier/modifier.component';
 import { AuthGuard } from './shared/auth.guard';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 
@@ -19,6 +20,9 @@ const routes: Routes = [
         { path : 'cpt5', component : AppComponent},
         { path : 'cpt3', component : InscriptionComponent},
         { path: 'cpt6/:id', component: ModifierComponent },
+        { path: 'user-profile/:id',component: UserProfileComponent,
+          canActivate: [AuthGuard],
+        },
 
 
 ];
