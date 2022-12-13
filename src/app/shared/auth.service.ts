@@ -35,7 +35,7 @@ export class AuthService {
         localStorage.setItem('access_token', res.token);
         this.getUserProfile(res._id).subscribe((res) => {
           this.currentUser = res._id;
-          this.router.navigate(['cpt1/' + res.msg._id]);
+          this.router.navigate(['user-profile/' + res.msg._id]);
         });
       });
   }
@@ -62,7 +62,7 @@ export class AuthService {
 
   // User profile
   getUserProfile(id: any): Observable<any> {
-    let api = `${this.endpoint}/cpt1/${id}`;
+    let api = `${this.endpoint}/user-profile/${id}`;
     return this.http.get(api, { headers: this.headers }).pipe(
       map((res) => {
         return res || {};

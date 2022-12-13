@@ -2,17 +2,20 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 /* import { HttpClient } from '@angular/common/http'; */
-import { HttpClientModule } from '@angular/common/http';
+
+
+
+
 import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TableauComponent } from './tableau/tableau.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ModifierComponent } from './modifier/modifier.component';
-
+import { AuthInterceptor } from './shared/authconfig.interceptor';
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
@@ -37,6 +40,8 @@ import { RouterModule } from '@angular/router';
 
 
 
+
+
 @NgModule({
   declarations: [
     
@@ -47,6 +52,8 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     LoginComponent,
     ModifierComponent,
+
+
 
  
 
@@ -100,7 +107,13 @@ import { RouterModule } from '@angular/router';
       ]
     )
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
   
 })
