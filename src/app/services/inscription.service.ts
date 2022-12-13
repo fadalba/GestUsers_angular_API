@@ -57,6 +57,8 @@ export class CrudService {
       .pipe(catchError(this.handleError));
   }
 
+  /* switcher */
+
   // Error
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';
