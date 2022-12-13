@@ -12,6 +12,8 @@ import { TableauComponent } from './tableau/tableau.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { ModifierComponent } from './modifier/modifier.component';
+
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
@@ -42,6 +44,7 @@ import { ModifierComponent } from './modifier/modifier.component';
     AppComponent,
     TableauComponent,
     InscriptionComponent,
+    ModifierComponent,
     HeaderComponent,
     LoginComponent,
     ModifierComponent,
@@ -83,15 +86,18 @@ import { ModifierComponent } from './modifier/modifier.component';
           path : 'cpt2', component : HeaderComponent
         },
         {
+          path : 'cpt3', component : InscriptionComponent
+        },
+        {
           path : 'cpt4', component : LoginComponent
         },
         {
           path : 'cpt5', component : AppComponent
         },
-        
         {
-          path : 'cpt3', component : InscriptionComponent
+          path : 'cpt6', component : ModifierComponent
         }
+        
       ]
     )
   ],
