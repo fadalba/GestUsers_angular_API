@@ -34,6 +34,7 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 
@@ -54,6 +55,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     LoginComponent,
     ModifierComponent,
     UserProfileComponent,
+    PaginationComponent,
 
 
 

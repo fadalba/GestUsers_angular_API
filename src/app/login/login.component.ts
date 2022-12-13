@@ -29,17 +29,42 @@ constructor(
   }
 
   loginUser() {
-    console.log(this.signinForm.value)
-    const user ={
-      email: this.signinForm.value.email,
-      password: this.signinForm.value.password
+    {
+      this.authService.signIn(this.signinForm.value);
     }
-    this.authService.getUser(user).subscribe(
-      res =>{
-        console.log(res)
-        this.router.navigateByUrl('cpt1')
-      }
-    )
   }
 
 }
+
+/* 
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { AuthService } from './../../shared/auth.service';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-signin',
+  templateUrl: './signin.component.html',
+  styleUrls: ['./signin.component.scss'],
+})
+
+export class SigninComponent implements OnInit {
+  signinForm: FormGroup;
+
+  constructor(
+    public fb: FormBuilder,
+    public authService: AuthService,
+    public router: Router
+  ) {
+    this.signinForm = this.fb.group({
+      email: [''],
+      password: [''],
+    });
+  }
+
+  ngOnInit() {}
+
+  loginUser() {
+    this.authService.signIn(this.signinForm.value);
+  }
+} */
