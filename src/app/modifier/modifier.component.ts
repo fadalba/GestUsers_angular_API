@@ -8,6 +8,10 @@ import { FormGroup, FormBuilder} from '@angular/forms';
   styleUrls: ['./modifier.component.css']
 })
 export class ModifierComponent implements OnInit {
+book: any;
+onSubmit() {
+throw new Error('Method not implemented.');
+}
 
   getId: any;
   updateForm: FormGroup;

@@ -30,6 +30,7 @@
     </tr>
     </thead>
     <tbody>
+      <!-- récupération des données -->
     <tr *ngFor="let book of Books | filter:searchText | paginate: { itemsPerPage: 5, currentPage: pages }">
       <th scope="row">{{ book._id }}</th>
       <th scope="row">{{ book.firstName }}</th>

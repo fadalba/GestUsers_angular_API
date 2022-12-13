@@ -10,7 +10,7 @@
                       <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
                         <p class="text-center h2 fw-bold mb-3 mx-1 mx-md-4 mt-4">Page de modification</p>
-                          <form class="p-3" [formGroup]="registerForm"> <!-- controle de saisie -->
+                        <form class="p-3" [formGroup]="registerForm" (ngSubmit)="onSubmit()"> <!-- controle de saisie -->
                             <div class="form-group">
                             <div class="row g-3">
 
@@ -44,12 +44,15 @@
                             <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                 <div class="text-center text-lg-center mt-4 pt-2">
                                     <button type="button" class="btn btn-success btn-lg "
-                                      style="padding-left: 2.5rem; padding-right: 2.5rem;" >Modifier </button>
+                                      style="padding-left: 2.5rem; padding-right: 2.5rem;" > <a [routerLink]="['/cpt1']">Modifier</a></button>
 
-                                      <button type="button" class="btn btn-danger btn-lg "
-                                      style="padding-left: 2.5rem; padding-right: 2.5rem;" >Annuler</button>
+                                      <button type="submit" class="btn btn-danger btn-lg "
+                                      style="padding-left: 2.5rem; padding-right: 2.5rem;" > <span [routerLink]="['/cpt1']">Annuler</span></button>
 
-                                  </div>
+
+                                      
+
+                                    </div>
                           </div>
                         </div>
                         </div>

@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 /* import { HttpClient } from '@angular/common/http'; */
 import { HttpClientModule } from '@angular/common/http';
+import { AngularFileUploaderModule } from "angular-file-uploader"; //pour telechargement de fichiers telsque photo 
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -54,6 +55,7 @@ import { TabUsersComponent } from './tab-users/tab-users.component';
     ModifierComponent,
     TabUsersComponent,
     ListArchivesComponent,
+   
 
   ],
   imports: [
@@ -83,6 +85,7 @@ import { TabUsersComponent } from './tab-users/tab-users.component';
     HttpClientModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
+    AngularFileUploaderModule ,
 
     RouterModule.forRoot(
       [

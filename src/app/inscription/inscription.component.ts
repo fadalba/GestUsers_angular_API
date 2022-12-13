@@ -1,3 +1,4 @@
+import { AngularFileUploaderConfig } from './../../../node_modules/angular-file-uploader/lib/angular-file-uploader.types.d';
 import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { CrudService } from '../services/inscription.service';
@@ -14,6 +15,7 @@ export class InscriptionComponent implements OnInit {
   registerForm !: FormGroup;
   password = 'password';
   submitted = false;
+
  /*  bookForm: FormGroup; */
 
   constructor(
@@ -27,6 +29,8 @@ export class InscriptionComponent implements OnInit {
       lastName: [''],
       email: [''],
       tel: [''],
+      matricule: [''],
+      
     });
   }
 
@@ -37,8 +41,10 @@ export class InscriptionComponent implements OnInit {
           tel: ['', Validators.required],
           email: ['', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
           password: ['', [Validators.required]],
-          passwordC: ['', [Validators.required, matchValidator(this.password)]],
-          profil: ['', [Validators.required]]
+          passwordC: ['', [Validators.required, matchValidator(this.password)]], /* vérifier correspondance mdp */
+          profil: ['', [Validators.required]],
+          matricule: [Date.now()], /* Autogénérer matricule à partir de la date */
+          
 
       });
   }
@@ -60,7 +66,8 @@ export class InscriptionComponent implements OnInit {
       firstName:this.registerForm.value.firstName,
       lastName:this.registerForm.value.lastName,
       email:this.registerForm.value.email,
-      password:this.registerForm.value.password
+      password:this.registerForm.value.password,
+      matricule:this.registerForm.value.matricule 
 
     }
     this.crudService.AddBook(this.registerForm.value).subscribe(

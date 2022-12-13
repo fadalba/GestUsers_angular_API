@@ -11,7 +11,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter'; /* recherche */
 export class ListArchivesComponent implements OnInit {
   book:any =list;  /* liste fiective à remplacer Books par []  pour les données rééels*/
 
-  pages: number = 1;
+  pages: number = 1; // début de pagination
   searchText:any; // search installer npm i ng2-search-filter
 
   Books: any = [];
@@ -26,7 +26,7 @@ export class ListArchivesComponent implements OnInit {
 
   delete(id: any, i: any) {
     console.log(id);
-    if (window.confirm('Do you want to go ahead?')) {
+    if (window.confirm('Souhaitez-vous supprimer?')) { // pop up
       this.crudService.deleteBook(id).subscribe((res) => {
         this.Books.splice(i, 1);
       });
