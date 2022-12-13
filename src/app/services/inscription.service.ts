@@ -41,9 +41,29 @@ export class CrudService {
     );
   }
 
+  /* switch */
+  //  changeRole=(id:any,role:any)=> {
+  //    role == "admin" ? role ="user": role = "admin" 
+  //    const user ={ role : role } 
+  //    if (confirm("Changer de role"))
+  //     { 
+  //       let API_URL = `${this.REST_API1}/update-book/${id}`;
+  //   return this.httpClient
+  //     .put(API_URL, user, { headers: this.httpHeaders })
+  //     .pipe(catchError(this.handleError));
+  //     } 
+  //   } 
+
   // Update
   updateBook(id: any, data: any): Observable<any> {
     let API_URL = `${this.REST_API1}/update-book/${id}`;
+    return this.httpClient
+      .put(API_URL, data, { headers: this.httpHeaders })
+      .pipe(catchError(this.handleError));
+  }
+  
+  change_role(id: any, data: any): Observable<any> {
+    let API_URL = `${this.REST_API1}/change-role/${id}`;
     return this.httpClient
       .put(API_URL, data, { headers: this.httpHeaders })
       .pipe(catchError(this.handleError));

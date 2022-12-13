@@ -27,7 +27,9 @@ export class TableauComponent implements OnInit {
       });
     }
   }
-
-
-  
+  changeRole=(id:any,profil:any)=> { 
+    profil = profil=="admin" ? "user" : "admin" 
+    const user ={ profil : profil } 
+    if (confirm("Changer de role")) { 
+      this.crudService.change_role(id, user).subscribe( data=>{ this.ngOnInit(); } ); } }
 }
