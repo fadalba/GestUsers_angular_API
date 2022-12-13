@@ -5,8 +5,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
 /* import { HttpClient } from '@angular/common/http'; */
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFileUploaderModule } from "angular-file-uploader"; //pour telechargement de fichiers telsque photo 
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { TableauComponent } from './tableau/tableau.component';
 import { HeaderComponent } from './header/header.component';
@@ -89,18 +87,18 @@ import { TabUsersComponent } from './tab-users/tab-users.component';
 
     RouterModule.forRoot(
       [
-        {path: '', redirectTo : '/cpt3', pathMatch : 'full'},
+        {path: '', redirectTo : '/inscrit', pathMatch : 'full'},
         {
-          path : 'cpt1', component : TableauComponent
+          path : 'admin', component : TableauComponent
         },
         {
           path : 'archives', component : ListArchivesComponent
         },
         {
-          path : 'cpt3', component : InscriptionComponent
+          path : 'inscrit', component : InscriptionComponent
         },
         {
-          path : 'cpt4', component : LoginComponent
+          path : 'login', component : LoginComponent
         },
         {
           path : 'cpt5', component : AppComponent
