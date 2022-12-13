@@ -3,8 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 /* import { HttpClient } from '@angular/common/http'; */
-import { HttpClientModule } from '@angular/common/http';
-import { AngularFileUploaderModule } from "angular-file-uploader"; //pour telechargement de fichiers telsque photo 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './shared/authconfig.interceptor';
+
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { TableauComponent } from './tableau/tableau.component';
 import { HeaderComponent } from './header/header.component';
@@ -32,16 +35,22 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { HeaderAcceuilComponent } from './header-acceuil/header-acceuil.component';
 import { ListArchivesComponent } from './list-archives/list-archives.component';
 import { AppComponent } from './app.component';
+
 import { Ng2SearchPipeModule } from 'ng2-search-filter'; /* recherche */
 import { TabUsersComponent } from './tab-users/tab-users.component';
 
 
 
 
+
+
 @NgModule({
+
+
   declarations: [
 
     AppComponent,
+    
     TableauComponent,
     InscriptionComponent,
     ModifierComponent,
@@ -51,13 +60,16 @@ import { TabUsersComponent } from './tab-users/tab-users.component';
     HeaderAcceuilComponent,
     ModifierComponent,
     ModifierComponent,
+
     TabUsersComponent,
     ListArchivesComponent,
-   
+  
+
 
   ],
   imports: [
-
+    
+    HttpClientModule,
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
@@ -114,7 +126,13 @@ import { TabUsersComponent } from './tab-users/tab-users.component';
       ]
     )
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 
 })
