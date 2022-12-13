@@ -20,6 +20,7 @@ export class InscriptionComponent implements OnInit {
       firstName: [''],
       lastName: [''],
       email: [''],
+      profil: [''],
       tel: [''],
       password: [''],
     });

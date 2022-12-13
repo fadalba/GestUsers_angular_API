@@ -23,6 +23,7 @@
       <td class="text-center">
         <a routerLink="/cpt6/{{ book._id }}" class="link-danger btn btn-sm btn-primary">Update</a>
         <button class="btn btn-sm btn-danger" (click)="delete(book._id, i)">Delete</button>
+        <button class="link-danger btn btn-sm btn-primary" (click)="delete(book._id, i)">Switch</button>
       </td>
     </tr>
   </tbody>
