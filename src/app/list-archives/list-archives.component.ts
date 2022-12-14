@@ -13,14 +13,32 @@ export class ListArchivesComponent implements OnInit {
 
   pages: number = 1; // début de pagination
   searchText:any; // search installer npm i ng2-search-filter
-
+ 
+  data:any;
   Books: any = [];
   constructor(private crudService: CrudService) {}
 
   ngOnInit(): void {
     this.crudService.GetBooks().subscribe((res) => {
       console.log(res);
-      this.Books = res;
+      this.data = res;
+      this.Books = this.data.filter((e: any) => e.etat == false);
+
+      /* 
+      ngOnInit(): void {
+
+  this.userService.getUsers().subscribe( 
+      data =>{
+
+        this.users = data;
+
+        this.crudService = this.Books.filter((e:any)=> e.etat == true)
+        console.log(this.userActif)
+      }
+); 
+
+}
+      */
     });
   }
 
@@ -44,4 +62,6 @@ export class ListArchivesComponent implements OnInit {
     }
   };
 
+
+  
 }

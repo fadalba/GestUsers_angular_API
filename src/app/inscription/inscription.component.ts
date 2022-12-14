@@ -1,4 +1,4 @@
-import { AngularFileUploaderConfig } from './../../../node_modules/angular-file-uploader/lib/angular-file-uploader.types.d';
+
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './.././shared/auth.service';
 import { Router } from '@angular/router';

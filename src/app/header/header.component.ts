@@ -14,8 +14,8 @@ book: any;
 
   constructor(
     public authService: AuthService,
-    public router: Router,
-    private actRoute: ActivatedRoute
+    private actRoute: ActivatedRoute,
+    public router: Router
   ) {
     let id = this.actRoute.snapshot.paramMap.get('id');
     this.authService.getUserProfile(id).subscribe((res) => {
@@ -31,11 +31,11 @@ book: any;
       this.authService.doLogout();
     }
   }
-
   doLogout() {
     let removeToken = localStorage.removeItem('access_token');
     if (removeToken == null) {
       this.router.navigate(['cpt3']);
     }
- }
+  }
 }
+
