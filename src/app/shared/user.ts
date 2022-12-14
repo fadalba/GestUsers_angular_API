@@ -5,5 +5,7 @@ export class User {
     password?: String;
     tel?: Number;
     profil?: String;
+    matricule?: String;
+    dateinscrit?:Date;
     etat?: boolean;
   }

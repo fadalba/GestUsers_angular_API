@@ -15,8 +15,8 @@ import { ListArchivesComponent } from './list-archives/list-archives.component';
 
 
 const routes: Routes = [
-  
-  {path: '', redirectTo : '/cpt3', pathMatch : 'full'},
+
+  {path: '', redirectTo : '/cpt4', pathMatch : 'full'},
         { path : 'cpt1', component : TableauComponent},
         { path : 'cpt8', component : ListArchivesComponent},
         { path : 'cpt7', component : TabUsersComponent},
@@ -25,7 +25,7 @@ const routes: Routes = [
         { path : 'cpt5', component : AppComponent},
         { path : 'cpt3', component : InscriptionComponent},
         { path: 'cpt6/:id', component: ModifierComponent },
-        { path: 'user-profile/:id',component: UserProfileComponent,
+        { path: 'user-profile/:id',component: UserProfileComponent, // id pour récuprer l'id du user profile connecté
           canActivate: [AuthGuard],
         },
 

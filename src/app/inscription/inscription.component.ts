@@ -24,6 +24,7 @@ export class InscriptionComponent implements OnInit {
       profil: [''],
       tel: [''],
       password: [''],
+      matricule: [''],
       etat: [true],
     });
   }
@@ -37,6 +38,7 @@ export class InscriptionComponent implements OnInit {
       password: ['', [Validators.required]],
       passwordC: ['', [Validators.required]],
       profil: ['', [Validators.required]],
+      matricule: [Date.now()], /* Autogénérer matricule à partir de la date */
       etat: [true]
     });
   }
@@ -49,4 +51,5 @@ export class InscriptionComponent implements OnInit {
       }
     });
   }
+  
 }

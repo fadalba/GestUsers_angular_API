@@ -32,10 +32,10 @@ book: any;
     }
   }
 
-  doLogout(){
-    let removeToken=localStorage.removeItem('access_token');
-    if(removeToken==null){
-      this.router.navigate(['/cpt3']);
-  }
-}
+  doLogout() {
+    let removeToken = localStorage.removeItem('access_token');
+    if (removeToken == null) {
+      this.router.navigate(['cpt3']);
+    }
  }
+}

@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 /* import { HttpClient } from '@angular/common/http'; */
 
-
+import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ListArchivesComponent } from './list-archives/list-archives.component';
 import { TabUsersComponent } from './tab-users/tab-users.component';
 import { AppComponent } from './app.component';
@@ -33,7 +33,6 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { PaginationComponent } from './pagination/pagination.component';
 import { HeaderAcceuilComponent } from './header-acceuil/header-acceuil.component';
 // import { ListArchivesComponent } from './list-archives/list-archives.component';
 // import { AppComponent } from './app.component';
@@ -44,9 +43,10 @@ import { AuthInterceptor } from './shared/authconfig.interceptor';
 
 
 
+
 @NgModule({
   declarations: [
-
+    UserProfileComponent,
     AppComponent,
     ListArchivesComponent,
     TableauComponent,
@@ -54,13 +54,14 @@ import { AuthInterceptor } from './shared/authconfig.interceptor';
     ModifierComponent,
     HeaderComponent,
     LoginComponent,
-    PaginationComponent,
+    /* PaginationComponent, */
     HeaderAcceuilComponent,
     ModifierComponent,
     ModifierComponent,
     TabUsersComponent,
     ListArchivesComponent,
-    TableauComponent
+    TableauComponent,
+
 
 
   ],
