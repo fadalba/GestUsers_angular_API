@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../services/inscription.service';
+import list from '../Books.json' /* pagination */
+import { Ng2SearchPipeModule } from 'ng2-search-filter'; /* recherche */
 
 @Component({
   selector: 'app-list-archives',
@@ -7,10 +9,13 @@ import { CrudService } from '../services/inscription.service';
   styleUrls: ['./list-archives.component.css']
 })
 export class ListArchivesComponent implements OnInit {
+  book:any =list;  /* liste fiective à remplacer Books par []  pour les données rééels*/
 
-  Books: any = [];
+  pages: number = 1; // début de pagination
+  searchText:any; // search installer npm i ng2-search-filter
+ 
   data:any;
-
+  Books: any = [];
   constructor(private crudService: CrudService) {}
 
   ngOnInit(): void {
@@ -39,7 +44,7 @@ export class ListArchivesComponent implements OnInit {
 
   delete(id: any, i: any) {
     console.log(id);
-    if (window.confirm('Do you want to go ahead?')) {
+    if (window.confirm('Souhaitez-vous supprimer?')) { // pop up
       this.crudService.deleteBook(id).subscribe((res) => {
         this.Books.splice(i, 1);
       });
@@ -57,4 +62,6 @@ export class ListArchivesComponent implements OnInit {
     }
   };
 
+
+  
 }

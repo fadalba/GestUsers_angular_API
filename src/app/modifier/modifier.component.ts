@@ -11,6 +11,7 @@ export class ModifierComponent implements OnInit {
 
   getId: any;
   updateForm: FormGroup;
+  registerForm!: FormGroup<any>;
 
   constructor(
     public formBuilder: FormBuilder,

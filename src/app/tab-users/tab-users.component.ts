@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../services/inscription.service';
+import list from '../Books.json' /* pagination */
+import { Ng2SearchPipeModule } from 'ng2-search-filter'; /* recherche */
 
 @Component({
   selector: 'app-tab-users',
@@ -7,6 +9,9 @@ import { CrudService } from '../services/inscription.service';
   styleUrls: ['./tab-users.component.css']
 })
 export class TabUsersComponent implements OnInit {
+  book:any =list;  /* liste fiective à remplacer Books par []  pour les données rééels*/
+  pages: number = 1;
+  searchText:any; // search installer npm i ng2-search-filter
 
   Books: any = [];
 
@@ -19,19 +24,6 @@ export class TabUsersComponent implements OnInit {
     });
   }
 
-  delete(id: any, i: any) {
-    console.log(id);
-    if (window.confirm('Do you want to go ahead?')) {
-      this.crudService.deleteBook(id).subscribe((res) => {
-        this.Books.splice(i, 1);
-      });
-    }
-  }
-  changeRole=(id:any,profil:any)=> { 
-    profil = profil=="admin" ? "user" : "admin" 
-    const user ={ profil : profil } 
-    if (confirm("Changer de role")) { 
-      this.crudService.change_role(id, user).subscribe( data=>{ this.ngOnInit(); } ); } }
 
 
 }

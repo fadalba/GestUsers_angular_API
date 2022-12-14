@@ -13,6 +13,7 @@ import { ListArchivesComponent } from './list-archives/list-archives.component';
 
 
 
+
 const routes: Routes = [
   
   {path: '', redirectTo : '/cpt4', pathMatch : 'full'},

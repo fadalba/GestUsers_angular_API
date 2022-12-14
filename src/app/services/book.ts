@@ -5,6 +5,8 @@ export class Book {
     email!: String;
     tel!:number;
     profil!:string;
+    dateinscrit!: Date;
+    matricule!:String;
     passwordC!:string;
     etat!:boolean;
   }

@@ -1,31 +1,49 @@
+<app-header></app-header>
 
+
+<div class="container tab">
+  <div class="search-hero" align="right">
+   <input class="form-controlMe"  type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Recherche par mot clé">
+ </div>
+   <table class="table">
+       <thead class="bg-success">
 
 <div class="container">
-  <h2 align="center"Tableau >Utilisateurs Actifs</h2>
+  <h2 align="center"Tableau >Utilisateurs Simples</h2>
 <table class="table align=center">
   <thead>
+
     <tr align="center">
       <th scope="col">id</th>
       <th scope="col">Prenom</th>
       <th scope="col">Nom</th>
-      <th scope="col">Email</th>
-      <th scope="col">telephone</th>
+      <th scope="col">email</th>
+      <th scope="col">Téléphone</th>
+      <th scope="col">Matricule</th>
       <th scope="col">Profil</th>
-      <th scope="col">Date Inscription</th>
+      <th scope="col">Date inscrit</th>
     </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let book of Books ; let i = index">
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let book of Books | filter:searchText | paginate: { itemsPerPage: 5, currentPage: pages }">
       <th scope="row">{{ book._id }}</th>
-      <td>{{ book.firstName }}</td>
+      <th scope="row">{{ book.firstName }}</th>
       <td>{{ book.lastName }}</td>
       <td>{{ book.email }}</td>
       <td>{{ book.tel }}</td>
+      <td>{{ book.matricule }}</td>
       <td>{{ book.profil }}</td>
-      <td>{{ book.createdAt}}</td>
-      
+      <td>{{ book.createdAt|date:  'dd - MM - yy HH:mm:ss'}}</td>  <!-- récupération date coté bd -->
+
     </tr>
   </tbody>
 </table>
-</div>
 
+
+<!-- ************************************pagination ****************************************************** -->
+<div class="pagination">
+  <pagination-controls  (pageChange)="pages = $event"></pagination-controls>
+</div>
+</div>
+<!-- ************************************pagination ****************************************************** -->
