@@ -55,6 +55,12 @@ export class CrudService {
       .pipe(catchError(this.handleError));
   }
 
+  
+
+
+
+
+
   // Delete
   deleteBook(id: any): Observable<any> {
     let API_URL = `${this.REST_API1}/delete-book/${id}`;

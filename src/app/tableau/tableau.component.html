@@ -2,6 +2,7 @@
 
 <div class="container">
   <h2 align="center"Tableau >Utilisateurs Actifs</h2>
+  <button [routerLink]="['/cpt8']">Liste archivée</button>
 <table class="table align=center">
   <thead>
     <tr align="center">
@@ -15,7 +16,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let book of Books ; let i = index">
+    <tr *ngFor="let book of Books  ; let i = index">
       <th scope="row">{{ book._id }}</th>
       <td>{{ book.firstName }}</td>
       <td>{{ book.lastName }}</td>
@@ -24,7 +25,7 @@
       <td>{{ book.profil }}</td>
       <td class="text-center">
         <a routerLink="/cpt6/{{ book._id }}" class="link-danger btn btn-sm btn-primary">Update</a>
-        <button class="btn btn-sm btn-danger" (click)="delete(book._id, i)">Delete</button>
+        <button class="btn btn-sm btn-danger" (click)="changeRole2(book._id, book.etat)">Archiver</button>
         <button class="link-danger btn btn-sm btn-primary" (click)="changeRole(book._id, book.profil)">Switch</button>
       </td>
     </tr>

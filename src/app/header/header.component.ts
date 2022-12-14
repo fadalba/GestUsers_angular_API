@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthService } from './.././shared/auth.service';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  currentUser: any = {};
 
-  ngOnInit(): void {
+  constructor(
+    public authService: AuthService,
+    private actRoute: ActivatedRoute
+  ) {
+    let id = this.actRoute.snapshot.paramMap.get('id');
+    this.authService.getUserProfile(id).subscribe((res) => {
+      console.log(res)
+      this.currentUser = res.msg;
+    
+    });
   }
 
+  ngOnInit() {}
+  loginUser() {
+    {
+      this.authService.doLogout();
+    }
+  }
 }

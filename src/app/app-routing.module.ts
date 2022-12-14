@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { ModifierComponent } from './modifier/modifier.component';
 import { AuthGuard } from './shared/auth.guard';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { TabUsersComponent } from './tab-users/tab-users.component';
+import { ListArchivesComponent } from './list-archives/list-archives.component';
 
 
 
@@ -15,6 +17,8 @@ const routes: Routes = [
   
   {path: '', redirectTo : '/cpt3', pathMatch : 'full'},
         { path : 'cpt1', component : TableauComponent},
+        { path : 'cpt8', component : ListArchivesComponent},
+        { path : 'cpt7', component : TabUsersComponent},
         { path : 'cpt2', component : HeaderComponent},
         { path : 'cpt4', component : LoginComponent},
         { path : 'cpt5', component : AppComponent},

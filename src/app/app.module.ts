@@ -4,8 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 /* import { HttpClient } from '@angular/common/http'; */
 
 
-
-
+import { ListArchivesComponent } from './list-archives/list-archives.component';
+import { TabUsersComponent } from './tab-users/tab-users.component';
 import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -48,6 +48,7 @@ import { PaginationComponent } from './pagination/pagination.component';
   declarations: [
     
     AppComponent,
+    ListArchivesComponent,
     TableauComponent,
     InscriptionComponent,
     ModifierComponent,
@@ -56,6 +57,7 @@ import { PaginationComponent } from './pagination/pagination.component';
     ModifierComponent,
     UserProfileComponent,
     PaginationComponent,
+    TabUsersComponent
 
 
 

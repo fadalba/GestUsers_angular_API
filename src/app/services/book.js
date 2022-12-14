@@ -20,7 +20,10 @@ let Book = new Schema(
       } ,
     password:{
         type: String,
-      }   
+      } ,
+   etat: {
+        type: Boolean,
+      }  
   },
   {
     collection: "books",

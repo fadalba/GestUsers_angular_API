@@ -6,4 +6,5 @@ export class Book {
     tel!:number;
     profil!:string;
     passwordC!:string;
+    etat!:boolean;
   }

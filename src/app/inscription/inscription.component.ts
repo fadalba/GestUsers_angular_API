@@ -36,7 +36,7 @@ export class InscriptionComponent implements OnInit {
       password: ['', [Validators.required]],
       passwordC: ['', [Validators.required]],
       profil: ['', [Validators.required]],
-      etat: [true]
+      etat: [true] 
     });
   }
 

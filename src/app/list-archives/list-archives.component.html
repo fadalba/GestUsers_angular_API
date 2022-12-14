@@ -1,32 +1,33 @@
+
+
 <div class="container">
-  <h2 align="center"Tableau >Liste des archives</h2>
-  <table class="table align=center">
-    <thead>
-      <tr align="center">
-        <th scope="col">Prénom</th>
-        <th scope="col">Nom</th>
-        <th scope="col">email</th>
-        <th scope="col">Téléphone</th>
-        <th scope="col">Profil</th>
-        <th scope="col">Date arhivage</th>
-      </tr>
-    </thead>
-    <tbody>
-  
-      <tr align="center">
-        <th scope="row">Cheikh Ibrahima</th>
-        <td>Ndiaye</td>
-        <td>Cheikh.ndiaye@gmail.com</td>
-        <td>7777777777</td>
-        <td></td>
-        <td>
-        </td>
-      </tr>
-  
-  
-  
-    </tbody>
-  </table>
-  </div>
-  
-  
+  <h2 align="center"Tableau >Utilisateurs Actifs</h2>
+  <button [routerLink]="['/cpt1']">Liste active</button>
+<table class="table align=center">
+  <thead>
+    <tr align="center">
+      <th scope="col">id</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Email</th>
+      <th scope="col">telephone</th>
+      <th scope="col">Profil</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of Books  ; let i = index">
+      <th scope="row">{{ book._id }}</th>
+      <td>{{ book.firstName }}</td>
+      <td>{{ book.lastName }}</td>
+      <td>{{ book.email }}</td>
+      <td>{{ book.tel }}</td>
+      <td>{{ book.profil }}</td>
+      <td class="text-center">
+        <button class="btn btn-sm btn-danger" (click)="changeRole2(book._id, book.etat)">Désarchiver</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
