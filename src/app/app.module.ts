@@ -40,7 +40,7 @@ import { HeaderAcceuilComponent } from './header-acceuil/header-acceuil.componen
 import { Ng2SearchPipeModule } from 'ng2-search-filter'; /* recherche */
 import { AuthInterceptor } from './shared/authconfig.interceptor';
 // import { TabUsersComponent } from './tab-users/tab-users.component';
-
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 
@@ -60,7 +60,8 @@ import { AuthInterceptor } from './shared/authconfig.interceptor';
     ModifierComponent,
     TabUsersComponent,
     ListArchivesComponent,
-    TableauComponent
+    TableauComponent,
+    UserProfileComponent
 
 
   ],

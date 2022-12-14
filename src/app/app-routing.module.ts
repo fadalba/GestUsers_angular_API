@@ -20,7 +20,7 @@ const routes: Routes = [
         { path : 'cpt1', component : TableauComponent},
         { path : 'cpt8', component : ListArchivesComponent},
         { path : 'cpt7', component : TabUsersComponent},
-        { path : 'cpt2', component : HeaderComponent},
+        { path : 'cpt2/:id', component : HeaderComponent},
         { path : 'cpt4', component : LoginComponent},
         { path : 'cpt5', component : AppComponent},
         { path : 'cpt3', component : InscriptionComponent},

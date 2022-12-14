@@ -30,14 +30,7 @@ export class AuthService {
   signIn(user: User) {
     return this.http
       .post<User>(`${this.endpoint}/signin`, user)
-      .subscribe((res: any) => {
-        console.log(res)
-        localStorage.setItem('access_token', res.token);
-        this.getUserProfile(res._id).subscribe((res) => {
-          this.currentUser = res._id;
-          this.router.navigate(['user-profile/' + res.msg._id]);
-        });
-      });
+      
   }
 
   getToken() {
