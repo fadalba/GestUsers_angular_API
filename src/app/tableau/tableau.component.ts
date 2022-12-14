@@ -25,21 +25,6 @@ export class TableauComponent implements OnInit {
       this.data = res;
       this.Books = this.data.filter((e: any) => e.etat == true);
 
-      /*
-      ngOnInit(): void {
-
-  this.userService.getUsers().subscribe(
-      data =>{
-
-        this.users = data;
-
-        this.crudService = this.Books.filter((e:any)=> e.etat == true)
-        console.log(this.userActif)
-      }
-);
-
-}
-      */
     });
   }
 
@@ -71,24 +56,3 @@ export class TableauComponent implements OnInit {
     }
   };
 }
-/*
-
-deleteId=(id:any,etat:any)=> {
-
-etat == "false" ? etat = true : etat = false
-
- const user ={
- etat : etat
-
- }
-
- if (confirm("Archiver cet utilisateur")) {
-    this.crudService.modifUsers(id,user).subscribe(
-
-      data=>{
-        this.ngOnInit();
-      }
-   );
- }
-}
-*/

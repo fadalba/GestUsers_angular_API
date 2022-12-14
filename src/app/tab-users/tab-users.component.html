@@ -6,12 +6,12 @@
    <input class="form-controlMe"  type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Recherche par mot clé">
  </div>
    <table class="table">
-       <thead class="bg-success">
+       <thead >
 
 <div class="container">
   <h2 align="center"Tableau >Utilisateurs Simples</h2>
 <table class="table align=center">
-  <thead>
+  <thead class="bg-success">
 
     <tr align="center">
       <th scope="col">id</th>
@@ -34,7 +34,7 @@
       <td>{{ book.tel }}</td>
       <td>{{ book.matricule }}</td>
       <td>{{ book.profil }}</td>
-      <td>{{ book.createdAt|date:  'dd - MM - yy HH:mm:ss'}}</td>  <!-- récupération date coté bd -->
+      <td>{{ book.createdAt|date:  'dd - MM - yy HH:mm:ss'}}</td>  <!-- récupération date coté bd --> 
 
     </tr>
   </tbody>
