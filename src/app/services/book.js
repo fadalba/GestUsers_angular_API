@@ -15,12 +15,16 @@ let Book = new Schema(
     tel: {
         type: String,
       },
-    profil:{
-        type: String,
-      } ,
     password:{
         type: String,
       } ,
+      photo:
+      {
+          type:String,
+      },
+      profil:{
+          type: String,
+        } ,
    etat: {
         type: Boolean,
       }  

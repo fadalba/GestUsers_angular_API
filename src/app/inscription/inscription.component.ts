@@ -1,8 +1,9 @@
 import { AngularFileUploaderConfig } from './../../../node_modules/angular-file-uploader/lib/angular-file-uploader.types.d';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { AuthService } from './.././shared/auth.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder,Validator, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-inscription',
   templateUrl: './inscription.component.html',
@@ -13,6 +14,7 @@ export class InscriptionComponent implements OnInit {
   signupForm: FormGroup;
 
   constructor(
+    private http: HttpClient,
     public fb: FormBuilder,
     public authService: AuthService,
     public router: Router
@@ -24,8 +26,28 @@ export class InscriptionComponent implements OnInit {
       profil: [''],
       tel: [''],
       password: [''],
+      photo: [''],
       etat: [true],
     });
+  }
+  
+  // function upload images
+  @ViewChild('fileInput', {static: false})
+    fileInput!: ElementRef; 
+
+
+  onFileUpload(){
+    const image =  this.fileInput.nativeElement.files[0];
+    const file = new FormData();
+    file.set('file', image);
+    this.http.post('http://localhost:4000/', file).subscribe(res =>{
+
+    console.log(res);
+
+    });
+
+    // end image
+
   }
 
   ngOnInit(): void {
@@ -33,7 +55,7 @@ export class InscriptionComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       tel: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      email: ['', [Validators.required, Validators.email,Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       password: ['', [Validators.required]],
       passwordC: ['', [Validators.required]],
       profil: ['', [Validators.required]],

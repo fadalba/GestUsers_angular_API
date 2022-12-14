@@ -4,6 +4,7 @@ export class User {
     email?: String;
     password?: String;
     tel?: Number;
+    photo? : string;
     profil?: String;
     etat?: boolean;
   }
