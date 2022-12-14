@@ -10,13 +10,19 @@ let Book = new Schema(
       type: String,
     },
     email: {
-      type: String,
+      type: Number,
     },
     tel: {
         type: String,
       },
     profil:{
         type: String,
+      } ,
+    password:{
+        type: String,
+      } ,
+   etat: {
+        type: Boolean,
       }  
   },
   {

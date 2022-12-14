@@ -7,4 +7,6 @@ export class Book {
     profil!:string;
     dateinscrit!: Date;
     matricule!:String;
+    passwordC!:string;
+    etat!:boolean;
   }

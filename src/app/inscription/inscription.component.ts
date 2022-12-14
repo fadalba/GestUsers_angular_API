@@ -1,10 +1,8 @@
 import { AngularFileUploaderConfig } from './../../../node_modules/angular-file-uploader/lib/angular-file-uploader.types.d';
 import { Component, OnInit } from '@angular/core';
-import { Validators } from '@angular/forms';
-import { CrudService } from '../services/inscription.service';
-import { NgZone } from '@angular/core';
+import { AuthService } from './.././shared/auth.service';
 import { Router } from '@angular/router';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder,Validator, Validators } from '@angular/forms';
 @Component({
   selector: 'app-inscription',
   templateUrl: './inscription.component.html',
@@ -12,123 +10,43 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 })
 
 export class InscriptionComponent implements OnInit {
-  registerForm !: FormGroup;
-  password = 'password';
-  submitted = false;
-
- /*  bookForm: FormGroup; */
+  signupForm: FormGroup;
 
   constructor(
-    public formBuilder: FormBuilder,
-    private router: Router,
-    private ngZone: NgZone,
-    private crudService: CrudService
+    public fb: FormBuilder,
+    public authService: AuthService,
+    public router: Router
   ) {
-    this.registerForm = this.formBuilder.group({
+    this.signupForm = this.fb.group({
       firstName: [''],
       lastName: [''],
       email: [''],
+      profil: [''],
       tel: [''],
-      matricule: [''],
-      
+      password: [''],
+      etat: [true],
     });
   }
 
-  ngOnInit() {
-      this.registerForm = this.formBuilder.group({
-          firstName: ['', Validators.required],
-          lastName: ['', Validators.required],
-          tel: ['', Validators.required],
-          email: ['', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-          password: ['', [Validators.required]],
-          passwordC: ['', [Validators.required, matchValidator(this.password)]], /* vérifier correspondance mdp */
-          profil: ['', [Validators.required]],
-          matricule: [Date.now()], /* Autogénérer matricule à partir de la date */
-          
-
-      });
+  ngOnInit(): void {
+    this.signupForm = this.fb.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      tel: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      password: ['', [Validators.required]],
+      passwordC: ['', [Validators.required]],
+      profil: ['', [Validators.required]],
+      etat: [true]
+    });
   }
-/*   get f() { return this.registerForm.controls; } */
 
-  onSubmit() {
-    this.submitted = true;
-
-
-
-    // stop here if form is invalid
-    // if (this.registerForm.invalid) {
-    //     return;
-    // }
-
-    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
-
-    const user={
-      firstName:this.registerForm.value.firstName,
-      lastName:this.registerForm.value.lastName,
-      email:this.registerForm.value.email,
-      password:this.registerForm.value.password,
-      matricule:this.registerForm.value.matricule 
-
-    }
-    this.crudService.AddBook(this.registerForm.value).subscribe(
-      () => {
-        console.log('Data added successfully!');
-        this.ngZone.run(() => this.router.navigateByUrl('/books-list'));
-      },
-      (err) => {
-        console.log(err);
-      },
-
-/*       this.inscriService.addUser(user).subscribe(
-      data =>{
-        console.log(data)
+  registerUser() {
+    this.authService.signUp(this.signupForm.value).subscribe((res) => {
+      if (res.result) {
+        this.signupForm.reset();
+        this.router.navigate(['cpt4']);
       }
-    ) */
-
-);
-}
-
-
-}
-
-
-
-export function matchValidator(fieldName: string) {
-  let fcfirst: FormControl;
-  let fcSecond: FormControl;
-
-  return function matchValidator(control: FormControl) {
-
-      if (!control.parent) {
-          return null;
-      }
-
-      // INITIALIZING THE VALIDATOR.
-      if (!fcfirst) {
-          //INITIALIZING FormControl first
-          fcfirst = control;
-          fcSecond = control.parent.get(fieldName) as FormControl;
-
-          //FormControl Second
-          if (!fcSecond) {
-              throw new Error('matchValidator(): non conforme');
-          }
-
-          fcSecond.valueChanges.subscribe(() => {
-              fcfirst.updateValueAndValidity();
-          });
-      }
-
-      if (!fcSecond) {
-          return null;
-      }
-
-      if (fcSecond.value !== fcfirst.value) {
-          return {
-              matchOther: true
-          };
-      }
-
-      return null;
+    });
   }
 }

@@ -24,7 +24,7 @@
       <th scope="col">Date inscrit</th>
     </tr>
     </thead>
-    
+
     <tbody>
     <tr *ngFor="let book of Books | filter:searchText | paginate: { itemsPerPage: 5, currentPage: pages }">
       <th scope="row">{{ book._id }}</th>
@@ -34,7 +34,7 @@
       <td>{{ book.tel }}</td>
       <td>{{ book.matricule }}</td>
       <td>{{ book.profil }}</td>
-      <td>{{ book.createdAt|date:  'dd - MM - yy HH:mm:ss'}}</td>  <!-- récupération date coté bd --> 
+      <td>{{ book.createdAt|date:  'dd - MM - yy HH:mm:ss'}}</td>  <!-- récupération date coté bd -->
 
     </tr>
   </tbody>

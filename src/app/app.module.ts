@@ -3,9 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 /* import { HttpClient } from '@angular/common/http'; */
-import { HttpClientModule } from '@angular/common/http';
-import { AngularFileUploaderModule } from "angular-file-uploader"; //pour telechargement de fichiers telsque photo 
+
+
+import { ListArchivesComponent } from './list-archives/list-archives.component';
+import { TabUsersComponent } from './tab-users/tab-users.component';
+import { AppComponent } from './app.component';
+
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TableauComponent } from './tableau/tableau.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
@@ -30,10 +35,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { PaginationComponent } from './pagination/pagination.component';
 import { HeaderAcceuilComponent } from './header-acceuil/header-acceuil.component';
-import { ListArchivesComponent } from './list-archives/list-archives.component';
-import { AppComponent } from './app.component';
+// import { ListArchivesComponent } from './list-archives/list-archives.component';
+// import { AppComponent } from './app.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter'; /* recherche */
-import { TabUsersComponent } from './tab-users/tab-users.component';
+import { AuthInterceptor } from './shared/authconfig.interceptor';
+// import { TabUsersComponent } from './tab-users/tab-users.component';
 
 
 
@@ -42,6 +48,7 @@ import { TabUsersComponent } from './tab-users/tab-users.component';
   declarations: [
 
     AppComponent,
+    ListArchivesComponent,
     TableauComponent,
     InscriptionComponent,
     ModifierComponent,
@@ -53,7 +60,8 @@ import { TabUsersComponent } from './tab-users/tab-users.component';
     ModifierComponent,
     TabUsersComponent,
     ListArchivesComponent,
-   
+    TableauComponent
+
 
   ],
   imports: [
@@ -69,52 +77,30 @@ import { TabUsersComponent } from './tab-users/tab-users.component';
     MdbFormsModule,
     MdbModalModule,
     MdbPopoverModule,
-    MdbRadioModule,
-    MdbRangeModule,
-    MdbRippleModule,
-    MdbScrollspyModule,
-    MdbTabsModule,
-    MdbTooltipModule,
+    // MdbRadioModule,
+    // MdbRangeModule,
+    // MdbRippleModule,
+    // MdbScrollspyModule,
+    // MdbTabsModule,
+    // MdbTooltipModule,
     MdbValidationModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     RouterModule,
     HttpClientModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
-    AngularFileUploaderModule ,
+    // AngularFileUploaderModule
 
-    RouterModule.forRoot(
-      [
-        {path: '', redirectTo : '/inscrit', pathMatch : 'full'},
-        {
-          path : 'admin', component : TableauComponent
-        },
-        {
-          path : 'archives', component : ListArchivesComponent
-        },
-        {
-          path : 'inscrit', component : InscriptionComponent
-        },
-        {
-          path : 'login', component : LoginComponent
-        },
-        {
-          path : 'cpt5', component : AppComponent
-        },
-
-        {
-          path : 'cpt6', component : ModifierComponent
-        },
-        {
-          path : 'cpt7', component : TabUsersComponent
-        },
-
-      ]
-    )
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 
 })

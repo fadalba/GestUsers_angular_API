@@ -33,4 +33,15 @@ export class ListArchivesComponent implements OnInit {
     }
   }
 
+
+  changeRole2 = (id: any, etat: any) => {
+    etat = etat == false ? true : false; /* pour archiver */
+    const user = { etat: etat };
+    if (confirm('désarchiver !!!')) {
+      this.crudService.change_role(id, user).subscribe((data) => {
+        this.ngOnInit();
+      });
+    }
+  };
+
 }

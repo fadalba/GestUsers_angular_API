@@ -1,17 +1,13 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CrudService } from './../services/inscription.service';
-import { FormGroup, FormBuilder} from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-modifier',
   templateUrl: './modifier.component.html',
   styleUrls: ['./modifier.component.css']
 })
 export class ModifierComponent implements OnInit {
-book: any;
-onSubmit() {
-throw new Error('Method not implemented.');
-}
 
   getId: any;
   updateForm: FormGroup;
