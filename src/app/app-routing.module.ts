@@ -15,7 +15,7 @@ import { ListArchivesComponent } from './list-archives/list-archives.component';
 
 const routes: Routes = [
   
-  {path: '', redirectTo : '/cpt3', pathMatch : 'full'},
+  {path: '', redirectTo : '/cpt4', pathMatch : 'full'},
         { path : 'cpt1', component : TableauComponent},
         { path : 'cpt8', component : ListArchivesComponent},
         { path : 'cpt7', component : TabUsersComponent},

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './.././shared/auth.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -12,7 +13,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     public authService: AuthService,
-    private actRoute: ActivatedRoute
+    private actRoute: ActivatedRoute,
+    public router: Router
   ) {
     let id = this.actRoute.snapshot.paramMap.get('id');
     this.authService.getUserProfile(id).subscribe((res) => {
@@ -26,6 +28,12 @@ export class HeaderComponent implements OnInit {
   loginUser() {
     {
       this.authService.doLogout();
+    }
+  }
+  doLogout() {
+    let removeToken = localStorage.removeItem('access_token');
+    if (removeToken == null) {
+      this.router.navigate(['cpt3']);
     }
   }
 }
