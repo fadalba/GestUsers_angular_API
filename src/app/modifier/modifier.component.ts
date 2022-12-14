@@ -26,7 +26,7 @@ throw new Error('Method not implemented.');
   ) {
     this.getId = this.activatedRoute.snapshot.paramMap.get('id');
 
-    this.crudService.GetUser(this.getId).subscribe((res) => {
+    this.crudService.GetBook(this.getId).subscribe((res) => {
       this.updateForm.setValue({
         firstName: res['firstName'],
         lastName: res['lastName'],
@@ -44,10 +44,10 @@ throw new Error('Method not implemented.');
   ngOnInit() {}
 
   onUpdate(): any {
-    this.crudService.updateUser(this.getId, this.updateForm.value).subscribe(
+    this.crudService.updateBook(this.getId, this.updateForm.value).subscribe(
       () => {
         console.log('Data updated successfully!');
-        this.ngZone.run(() => this.router.navigateByUrl('/users-list'));
+        this.ngZone.run(() => this.router.navigateByUrl('/books-list'));
       },
       (err) => {
         console.log(err);
