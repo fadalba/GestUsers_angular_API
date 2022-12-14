@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
     this.authService.getUserProfile(id).subscribe((res) => {
       console.log(res)
       this.currentUser = res.msg;
-    
+
     });
   }
 
@@ -37,7 +37,4 @@ export class HeaderComponent implements OnInit {
     }
   }
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 55e99be16e6f7ccdcece478d5cde18f2ae980965
