@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-book: any;
 
   currentUser: any = {};
 
@@ -21,7 +20,7 @@ book: any;
     this.authService.getUserProfile(id).subscribe((res) => {
       console.log(res)
       this.currentUser = res.msg;
-
+    
     });
   }
 
@@ -38,4 +37,7 @@ book: any;
     }
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 55e99be16e6f7ccdcece478d5cde18f2ae980965

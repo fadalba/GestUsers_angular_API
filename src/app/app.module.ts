@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 /* import { HttpClient } from '@angular/common/http'; */
-
-import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ListArchivesComponent } from './list-archives/list-archives.component';
 import { TabUsersComponent } from './tab-users/tab-users.component';
 import { AppComponent } from './app.component';
@@ -39,7 +37,7 @@ import { HeaderAcceuilComponent } from './header-acceuil/header-acceuil.componen
 import { Ng2SearchPipeModule } from 'ng2-search-filter'; /* recherche */
 import { AuthInterceptor } from './shared/authconfig.interceptor';
 // import { TabUsersComponent } from './tab-users/tab-users.component';
-
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 
@@ -61,7 +59,7 @@ import { AuthInterceptor } from './shared/authconfig.interceptor';
     TabUsersComponent,
     ListArchivesComponent,
     TableauComponent,
-
+    UserProfileComponent
 
 
   ],

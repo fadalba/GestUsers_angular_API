@@ -30,7 +30,20 @@ constructor(
 
   loginUser() {
     {
-      this.authService.signIn(this.signinForm.value);
+      this.authService.signIn(this.signinForm.value).subscribe((res: any) => {
+        localStorage.setItem('access_token', res.token);
+        this.authService.getUserProfile(res._id).subscribe((res) => {
+          // this.currentUser = res._id;
+          console.log(res.msg.profil)
+          if(res.msg.profil=="admin"){
+            this.router.navigateByUrl("cpt2");
+          }
+          else{
+            this.router.navigateByUrl("cpt7");
+          }
+          // this.router.navigate(['cpt2/' + res.msg._id]);
+        });
+      });
     }
   }
 
