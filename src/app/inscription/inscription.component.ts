@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from './.././shared/auth.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder,Validator, Validators } from '@angular/forms';
+import { timestamp } from 'rxjs';
 @Component({
   selector: 'app-inscription',
   templateUrl: './inscription.component.html',
@@ -25,6 +26,9 @@ export class InscriptionComponent implements OnInit {
       tel: [''],
       password: [''],
       etat: [true],
+      matricule: [Date.now()],
+      dateinscrit:[ new Date ]
+      
     });
   }
 
@@ -37,7 +41,10 @@ export class InscriptionComponent implements OnInit {
       password: ['', [Validators.required]],
       passwordC: ['', [Validators.required]],
       profil: ['', [Validators.required]],
-      etat: [true]
+      etat: [true],
+      matricule: [Date.now()], 
+      dateinscrit:[new Date]
+      
     });
   }
 

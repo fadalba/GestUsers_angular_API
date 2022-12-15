@@ -29,9 +29,7 @@ export class AuthService {
   // Sign-in
   signIn(user: User) {
     return this.http
-      .post<User>(`${this.endpoint}/signin`, user)
-      
-      
+      .post<User>(`${this.endpoint}/signin`, user)   
   }
 
   getToken() {

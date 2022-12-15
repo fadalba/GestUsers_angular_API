@@ -6,4 +6,6 @@ export class User {
     tel?: Number;
     profil?: String;
     etat?: boolean;
+    matricule?:string;
+    dateinscrit? : Date
   }
