@@ -34,12 +34,17 @@ constructor(
         localStorage.setItem('access_token', res.token);
         this.authService.getUserProfile(res._id).subscribe((res) => {
           // this.currentUser = res._id;
-          console.log(res.msg.profil)
-          if(res.msg.profil=="admin"){
-            this.router.navigateByUrl("cpt2");
+          console.log(res.msg)
+          if(res.msg.etat==true){
+            if(res.msg.profil=="admin"){
+              this.router.navigateByUrl("cpt1");
+            }
+            else{
+              this.router.navigateByUrl("cpt7");
+            }
           }
           else{
-            this.router.navigateByUrl("cpt7");
+            alert("User supprimer !")
           }
           // this.router.navigate(['cpt2/' + res.msg._id]);
         });

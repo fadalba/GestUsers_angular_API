@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
     this.authService.getUserProfile(id).subscribe((res) => {
       console.log(res)
       this.currentUser = res.msg;
-    
+     
     });
   }
 
@@ -33,7 +33,10 @@ export class HeaderComponent implements OnInit {
   doLogout() {
     let removeToken = localStorage.removeItem('access_token');
     if (removeToken == null) {
-      this.router.navigate(['cpt3']);
+      this.router.navigate(['cpt4']);
     }
   }
+
+
+  
 }
