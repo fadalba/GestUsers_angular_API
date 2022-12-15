@@ -45,6 +45,7 @@ export class InscriptionComponent implements OnInit {
     this.authService.signUp(this.signupForm.value).subscribe((res) => {
       if (res.result) {
         this.signupForm.reset();
+        alert("Inscription réussie hoooww!!!")
         this.router.navigate(['cpt4']);
       }
     });

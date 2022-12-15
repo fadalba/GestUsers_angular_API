@@ -37,6 +37,10 @@ export class AuthService {
   getToken() {
     return localStorage.getItem('access_token');
   }
+  getId() {
+    return localStorage.getItem('id');
+  }
+  
 
   getUser(user: User) {
     return this.http.post<User>(`${this.endpoint}/signin`, user)

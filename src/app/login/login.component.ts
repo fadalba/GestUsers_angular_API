@@ -34,6 +34,7 @@ constructor(
         localStorage.setItem('access_token', res.token);
         this.authService.getUserProfile(res._id).subscribe((res) => {
           // this.currentUser = res._id;
+          localStorage.setItem("id",res.msg._id)
           console.log(res.msg)
           if(res.msg.etat==true){
             if(res.msg.profil=="admin"){

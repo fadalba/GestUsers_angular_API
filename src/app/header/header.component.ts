@@ -10,21 +10,27 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   currentUser: any = {};
+  getItem: any = {};
 
   constructor(
     public authService: AuthService,
     private actRoute: ActivatedRoute,
     public router: Router
   ) {
-    let id = this.actRoute.snapshot.paramMap.get('id');
-    this.authService.getUserProfile(id).subscribe((res) => {
-      console.log(res)
-      this.currentUser = res.msg;
-     
-    });
+   
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+   
+    let id = this.actRoute.snapshot.paramMap.get('id');
+    this.authService.getUserProfile(localStorage.getItem('id')).subscribe((res) => {
+      console.log(res)
+      this.currentUser = res.msg;
+      
+     
+    }); 
+  }
   loginUser() {
     {
       this.authService.doLogout();
