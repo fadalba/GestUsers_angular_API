@@ -11,6 +11,7 @@
                       <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
                         <p class="text-center h2 fw-bold mb-3 mx-1 mx-md-4 mt-4">Page d'inscription</p>
+                        <span *ngIf="mailExiste != '' && mailExiste != undefined"> mail existe déja </span>
                           <form class="p-3" [formGroup]="signupForm" (ngSubmit)="registerUser()"> <!-- controle de saisie et activation du bouton-->
                             <div class="form-group">
                             <div class="row g-3">
@@ -35,11 +36,7 @@
                               <input formControlName="email"  type="email" class="form-control" placeholder="Email" aria-label="email">
                               <div class="alert alert-danger " *ngIf="signupForm.controls['email'].invalid && signupForm.controls['email'].touched">Champs vide ou format incoprrect</div>
                             </div>
-                            <div class="col">
-                              <label for="telephone">Téléphone:</label>
-                              <input formControlName="tel"  type="number" class="form-control" id="tel" placeholder="N° téléphone" aria-label="telephone">
-                              <div class="alert alert-danger " *ngIf="signupForm.controls['tel'].invalid && signupForm.controls['tel'].touched"> Champs obligatoire</div>
-                            </div>
+          
                           </div>
 
                           <br/><br/>

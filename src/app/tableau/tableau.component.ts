@@ -23,7 +23,7 @@ export class TableauComponent implements OnInit {
     this.crudService.GetBooks().subscribe((res) => {
       console.log(res);
       this.data = res;
-      this.Books = this.data.filter((e: any) => e.etat == true);
+      this.Books = this.data.filter((e: any) => e.etat == true );
 
       /*
       ngOnInit(): void {

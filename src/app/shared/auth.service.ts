@@ -32,6 +32,11 @@ export class AuthService {
       .post<User>(`${this.endpoint}/signin`, user)   
   }
 
+  update(user: User) {
+    return this.http
+      .post<User>(`${this.endpoint}/update-user`, user)   
+  }
+
   getToken() {
     return localStorage.getItem('access_token');
   }
@@ -65,6 +70,11 @@ export class AuthService {
       }),
       catchError(this.handleError)
     );
+  }
+
+  getAllUser(){
+    let api = `${this.endpoint}/`;
+    return this.http.get(api);
   }
 
   // Error
